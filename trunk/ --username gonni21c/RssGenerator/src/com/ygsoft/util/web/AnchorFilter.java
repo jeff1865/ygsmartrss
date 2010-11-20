@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.*;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 
 import me.yglib.htmlparser.TagAttribute;
 import me.yglib.htmlparser.Token;
@@ -25,8 +24,14 @@ public class AnchorFilter {
 		this.rootUrl = rootUrl;
 	}
 	
-	public void addFilterPlugin(){
-		
+	public void setUrl(String url){
+		this.rootUrl = url;
+	}
+	
+	public void addFilterPlugin(ContentsFilterPlugin fPlugin){
+		if(this.contFilters == null)
+			this.contFilters = new ArrayList<ContentsFilterPlugin>();
+		this.contFilters.add(fPlugin);
 	}
 	
 	

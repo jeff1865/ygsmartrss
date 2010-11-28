@@ -7,6 +7,7 @@ public class Anchor {
 	
 	private String url;
 	private List<String> texts;
+	private String xPath;
 	
 	public Anchor(String anchorUrl){
 		this.url = anchorUrl;
@@ -31,5 +32,13 @@ public class Anchor {
 		if(this.texts != null)
 			for(String st : this.texts) tx += st + "\n";
 		return this.url + "---" + tx;
+	}
+
+	public void setxPath(String xPath) {
+		this.xPath = xPath;
+	}
+
+	public String getxPath() {
+		return xPath;
 	}
 }

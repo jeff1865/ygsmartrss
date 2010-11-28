@@ -2,6 +2,8 @@ package com.ygsoft.rss;
 
 import java.util.Date;
 
+import com.ygsoft.rss.data.SiteDao;
+
 public class RssGenerator {
 	
 	private String mainUrl = null;

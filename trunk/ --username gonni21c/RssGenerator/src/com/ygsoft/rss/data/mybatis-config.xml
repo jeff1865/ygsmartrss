@@ -3,8 +3,15 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>	
+<!-- 
 	<typeAliases>
 		<typeAlias type="vo.UserVO" alias="User"/>
+	</typeAliases>
+-->
+
+	
+	<typeAliases>
+		<typeAlias type="com.ygsoft.rss.NewInfo" alias="NewInfo"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -20,7 +27,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="com/ygsoft/rss/data/siteMapper.xml"/>
+		<mapper resource="com/ygsoft/rss/data/SiteRssMapper.xml"/>
 	</mappers>
 	
 </configuration>

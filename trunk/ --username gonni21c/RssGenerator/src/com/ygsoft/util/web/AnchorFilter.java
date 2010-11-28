@@ -82,7 +82,7 @@ public class AnchorFilter {
 	}
 	
 	//called by extractAnchor
-	public void getAnchor(Node anchorNode, Anchor anchor){
+	private void getAnchor(Node anchorNode, Anchor anchor){
 		List<Node> subNodes = anchorNode.getChildren();
 		Token token = null;
 		
@@ -117,10 +117,8 @@ public class AnchorFilter {
 		}
 		return null;
 	}
-	
-	
-		
-	public boolean isAnchorNode(Node node){
+			
+	private boolean isAnchorNode(Node node){
 		
 		Token token = node.getToken();
 		if(token instanceof TokenTag){
@@ -133,8 +131,7 @@ public class AnchorFilter {
 		}
 		return false;
 	}
-	
-	
+		
 	public static void main(String ... v){
 		AnchorFilter test = new AnchorFilter("http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park");
 		List<Anchor> anchorTexts = test.getAnchorTexts();
@@ -143,4 +140,5 @@ public class AnchorFilter {
 			System.out.println(++i + "Result>" + anchor);
 		}
 	}
+	
 }

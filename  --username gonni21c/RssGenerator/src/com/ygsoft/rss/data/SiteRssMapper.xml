@@ -13,17 +13,41 @@
 	</insert>
 </mapper>
  -->
- 
 <mapper namespace="com.ygsoft.rss.data.SiteRssMapper">
+	
+	<select id="getRegSiteList" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser" 
+		from regsites	
+	</select>
+	
+	<select id="getRegSite" parameterType="int" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser" 
+		from regsites 
+		where site_id = #{siteId}
+	</select>
 	
 	<insert id="checkInfo" parameterType="NewInfo">
 		insert into test_abc3(anc_url, anc_text, anc_img, dup_cnt, regDate)
 		values(#{link}, #{anchorText}, #{img}, 0, now())
 		on duplicate key update dup_cnt = dup_cnt + 1;
 	</insert>
-	
+		
 	<insert id="addTargetSite" parameterType="TargetSite">
-		insert into regsites(tartget_url, check_interval_min, name, reg_date, latest_date, reg_user)
+		insert into regsites(target_url, check_interval_min, name, reg_date, latest_date, reg_user)
 		values(#{targetUrl},#{checkIntervalMin}, #{name}, now(), now(), #{regUser});
 	</insert>
 		

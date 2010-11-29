@@ -87,6 +87,41 @@ public class SiteDao implements ISiteDao {
 				targetSite, "Cannot add the target site..");
 	}
 	
+	public List<TargetSite> getRegsiteList(){
+		List<TargetSite> retTargetList = null;
+		SqlSession session = this.sqlSessionFactory.openSession();
+		
+		try	{
+			retTargetList = session.selectList("com.ygsoft.rss.data.SiteRssMapper.getRegSiteList");
+			session.commit();
+		} catch(Exception e){
+			e.printStackTrace();
+			throw new DataLayerException("Cannot get the list of target site from DB..");
+		} finally {
+			session.close();
+		}
+		
+		return retTargetList;
+	}
+	
+	public TargetSite getTargetSite(int siteId){
+		TargetSite retTargetSite = null;
+		SqlSession session = this.sqlSessionFactory.openSession();
+		
+		try	{
+			retTargetSite = (TargetSite)session.selectOne("com.ygsoft.rss.data.SiteRssMapper.getRegSite", 
+					siteId);
+			session.commit();
+		} catch(Exception e){
+			e.printStackTrace();
+			throw new DataLayerException("Cannot get the target site from DB..");
+		} finally {
+			session.close();
+		}
+		
+		return retTargetSite;
+	}
+	
 	private void defaultInsertAction(String func, Object arg, String exceptionMsg){
 		SqlSession session = this.sqlSessionFactory.openSession();
 		try	{
@@ -102,6 +137,9 @@ public class SiteDao implements ISiteDao {
 	
 	public static void main(String ... v){
 		SiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
+		TargetSite ts = siteDao.getTargetSite(1);
+		System.out.println("Target Site :" + ts);
+		
 		//siteDao.createSiteDataTable("test_abc4");
 		{
 //		NewInfo newInfo = new NewInfo();
@@ -112,12 +150,22 @@ public class SiteDao implements ISiteDao {
 //		siteDao.checkUrl(newInfo);
 		}
 		
-		TargetSite ts = new TargetSite();
-		ts.setCheckInterval(40);
-		ts.setName("Test Name");
-		ts.setRegUser("Test User");
-		ts.setTargetUrl("http://www.daum.net/");
+		{
+//		TargetSite ts = new TargetSite();
+//		ts.setCheckInterval(40);
+//		ts.setName("Test Name");
+//		ts.setRegUser("Test User");
+//		ts.setTargetUrl("http://www.daum.net/");
+//		
+//		siteDao.addMonitorSite(ts);
+		}
 		
-		siteDao.addMonitorSite(ts);
+		{
+//		List<TargetSite> regsiteList = siteDao.getRegsiteList();
+//		for(TargetSite targetSite : regsiteList){
+//			System.out.println(targetSite);
+//			System.out.println("-------------------------------------");
+//		}
+		}
 	}
 }

@@ -7,8 +7,30 @@ public class TargetSite {
 	String targetUrl;
 	int checkIntervalMin;
 	String name;
-	Timestamp regDate, latest_da;
+	Timestamp regDate, latestDate;
 	String regUser;
+	
+	public String toString(){
+		return "SiteID :" + this.siteId + "\n" + 
+			    "TargetUrl :" + this.targetUrl + "\n" + 
+			    "CheckIntervalMin :" + this.checkIntervalMin + "\n" +
+			    "Name :" + this.name + "\n" +
+			    "RegDate :" + this.regDate + "\n" +
+			    "LatestDate :" + this.latestDate + "\n" +
+			    "RegUser :" + this.regUser ;
+	}
+	
+	public Timestamp getLatestDate() {
+		return latestDate;
+	}
+
+	public void setLatestDate(Timestamp latestDate) {
+		this.latestDate = latestDate;
+	}
+
+	public void setCheckIntervalMin(int checkIntervalMin) {
+		this.checkIntervalMin = checkIntervalMin;
+	}
 	
 	public int getSiteId() {
 		return siteId;
@@ -40,17 +62,10 @@ public class TargetSite {
 	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
-	public Timestamp getLatest_da() {
-		return latest_da;
-	}
-	public void setLatest_da(Timestamp latest_da) {
-		this.latest_da = latest_da;
-	}
 	public String getRegUser() {
 		return regUser;
 	}
 	public void setRegUser(String regUser) {
 		this.regUser = regUser;
 	}
-	
 }

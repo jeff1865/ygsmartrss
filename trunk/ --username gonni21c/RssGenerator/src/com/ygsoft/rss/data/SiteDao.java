@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import com.ygsoft.rss.NewInfo;
+import com.ygsoft.rss.TargetSite;
 
 public class SiteDao implements ISiteDao {
 
@@ -19,13 +20,16 @@ public class SiteDao implements ISiteDao {
 	}
 	
 	public int checkUrl(NewInfo newInfo){
+		log.debug("Check newInfo :" + newInfo);
 		int retInt = -1;
 		SqlSession session = this.sqlSessionFactory.openSession();
 		
 		try	{
 			retInt = session.insert("com.ygsoft.rss.data.SiteRssMapper.checkInfo", newInfo);
 			session.commit();
+			log.debug("Check completed result code:" + retInt);
 		} catch(Exception e){
+			e.printStackTrace();
 			throw new DataLayerException("Cannot check the new information because of DB problem..");
 		} finally {
 			session.close();
@@ -43,6 +47,7 @@ public class SiteDao implements ISiteDao {
 				retInt =+ session.insert("com.ygsoft.rss.data.SiteRssMapper.checkInfo", newInfo);
 			}
 			session.commit();
+			
 		} catch(Exception e){
 			throw new DataLayerException("Cannot check the new information because of DB problem..");
 		} finally {
@@ -70,7 +75,26 @@ public class SiteDao implements ISiteDao {
 			conn.commit();
 			//conn.close();
 		} catch (SQLException e) {
-			throw new DataLayerException(e.getMessage());
+			throw new DataLayerException("Cannot create the stored site table..\r\n" + e.getMessage());
+		} finally {
+			session.close();
+		}
+	}
+	
+	public void addMonitorSite(TargetSite targetSite){
+		log.debug("Add target site :" + targetSite);
+		this.defaultInsertAction("com.ygsoft.rss.data.SiteRssMapper.addTargetSite", 
+				targetSite, "Cannot add the target site..");
+	}
+	
+	private void defaultInsertAction(String func, Object arg, String exceptionMsg){
+		SqlSession session = this.sqlSessionFactory.openSession();
+		try	{
+			session.insert(func, arg);
+			session.commit();
+		} catch(Exception e){
+			e.printStackTrace();	// need to remove
+			throw new DataLayerException(exceptionMsg + "\r\n" + e.getMessage());
 		} finally {
 			session.close();
 		}
@@ -78,6 +102,22 @@ public class SiteDao implements ISiteDao {
 	
 	public static void main(String ... v){
 		SiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
-		siteDao.createSiteDataTable("test_abc1");
+		//siteDao.createSiteDataTable("test_abc4");
+		{
+//		NewInfo newInfo = new NewInfo();
+//		newInfo.setImg("img");
+//		newInfo.setAnchorText("test anchor");
+//		newInfo.setLink("www.test.com");
+//		
+//		siteDao.checkUrl(newInfo);
+		}
+		
+		TargetSite ts = new TargetSite();
+		ts.setCheckInterval(40);
+		ts.setName("Test Name");
+		ts.setRegUser("Test User");
+		ts.setTargetUrl("http://www.daum.net/");
+		
+		siteDao.addMonitorSite(ts);
 	}
 }

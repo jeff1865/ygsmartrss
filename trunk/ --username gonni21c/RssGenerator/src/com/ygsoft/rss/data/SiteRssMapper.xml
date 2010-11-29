@@ -17,9 +17,14 @@
 <mapper namespace="com.ygsoft.rss.data.SiteRssMapper">
 	
 	<insert id="checkInfo" parameterType="NewInfo">
-		insert into test_abc1(anc_url, anc_text, anc_img, dup_cnt, regDate)
-		values(#{url}, #{anchorText}, #{img}, 0, now())
+		insert into test_abc3(anc_url, anc_text, anc_img, dup_cnt, regDate)
+		values(#{link}, #{anchorText}, #{img}, 0, now())
 		on duplicate key update dup_cnt = dup_cnt + 1;
+	</insert>
+	
+	<insert id="addTargetSite" parameterType="TargetSite">
+		insert into regsites(tartget_url, check_interval_min, name, reg_date, latest_date, reg_user)
+		values(#{targetUrl},#{checkIntervalMin}, #{name}, now(), now(), #{regUser});
 	</insert>
 		
 </mapper>

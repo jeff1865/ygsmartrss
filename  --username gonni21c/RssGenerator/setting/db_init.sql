@@ -17,3 +17,14 @@ CREATE TABLE site_T0003 (
   PRIMARY KEY (anc_url)
 );
 
+CREATE TABLE `rssdata`.`regsites` (
+  `site_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `target_url` VARCHAR(512) NOT NULL,
+  `check_interval_min` INTEGER UNSIGNED NOT NULL,
+  `name` VARCHAR(128),
+  `reg_date` TIMESTAMP DEFAULT current_timestamp,
+  `latest_date` TIMESTAMP,
+  `reg_user` VARCHAR(45),
+  PRIMARY KEY (`site_id`)
+)
+ENGINE = InnoDB;

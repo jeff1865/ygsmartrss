@@ -2,7 +2,7 @@ package com.ygsoft.rss;
 
 public class NewInfo {
 	
-	String sideId;
+	String siteId;
 	String anchorText;
 	String img;
 	String link;
@@ -28,10 +28,10 @@ public class NewInfo {
 	public String toString(){
 		return "[NewInfo]" + this.anchorText + "---" + this.link;
 	}
-	public String getSideId() {
-		return sideId;
+	public String getSiteId() {
+		return siteId;
 	}
-	public void setSideId(String sideId) {
-		this.sideId = sideId;
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
 	}
 }

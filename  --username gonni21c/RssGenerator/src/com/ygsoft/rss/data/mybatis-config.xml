@@ -14,7 +14,8 @@
 		<transactionManager type="JDBC"/>
 		<dataSource type="POOLED">
 			<property name="driver" value="com.mysql.jdbc.Driver"/>
-			<property name="url" value="jdbc:mysql://localhost/smart_agent"/>
+			<property name="url" value="jdbc:mysql://localhost/rssdata" />
+			<!--  <property name="useUnicode" value="yes&amp;characterEncoding=EUCKR"/> -->
 			<property name="username" value="root"/>
 			<property name="password" value="1999"/>
 		</dataSource>

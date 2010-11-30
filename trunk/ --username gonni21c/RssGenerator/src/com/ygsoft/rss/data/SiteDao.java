@@ -3,6 +3,7 @@ package com.ygsoft.rss.data;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -37,14 +38,18 @@ public class SiteDao implements ISiteDao {
 		return retInt;
 	}
 	
-	public int checkUrls(List<NewInfo> newInfos){
+	public List<NewInfo> checkUrls(List<NewInfo> newInfos){
+		ArrayList<NewInfo> alNewInfo = new ArrayList<NewInfo>();
 		int retInt = 0;
 		SqlSession session = this.sqlSessionFactory.openSession();
 		
 		try	{
 			for(NewInfo newInfo : newInfos)
 			{
-				retInt =+ session.insert("com.ygsoft.rss.data.SiteRssMapper.checkInfo", newInfo);
+				retInt = session.insert("com.ygsoft.rss.data.SiteRssMapper.checkInfo", newInfo);
+				if(retInt == 1){
+					alNewInfo.add(newInfo);
+				}
 			}
 			session.commit();
 			
@@ -53,7 +58,7 @@ public class SiteDao implements ISiteDao {
 		} finally {
 			session.close();
 		}
-		return retInt;
+		return alNewInfo;
 	}
 	
 	
@@ -63,7 +68,7 @@ public class SiteDao implements ISiteDao {
 		try {
 			Statement stmt = conn.createStatement();
 			stmt.execute("CREATE TABLE " + tableName + " (" +
-					"anc_url VARCHAR(767) NOT NULL," +
+					"anc_url VARCHAR(381) NOT NULL," +
 					"anc_text VARCHAR(256) NOT NULL," +
 					"anc_img VARCHAR(256) NOT NULL," +
 					"dup_cnt INTEGER UNSIGNED NOT NULL," +
@@ -75,6 +80,7 @@ public class SiteDao implements ISiteDao {
 			conn.commit();
 			//conn.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new DataLayerException("Cannot create the stored site table..\r\n" + e.getMessage());
 		} finally {
 			session.close();
@@ -137,25 +143,26 @@ public class SiteDao implements ISiteDao {
 	
 	public static void main(String ... v){
 		SiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
-		TargetSite ts = siteDao.getTargetSite(1);
-		System.out.println("Target Site :" + ts);
+		//TargetSite ts = siteDao.getTargetSite(1);
+		//System.out.println("Target Site :" + ts);
 		
-		//siteDao.createSiteDataTable("test_abc4");
+		//siteDao.createSiteDataTable("test_abc7");
 		{
-//		NewInfo newInfo = new NewInfo();
-//		newInfo.setImg("img");
-//		newInfo.setAnchorText("test anchor");
-//		newInfo.setLink("www.test.com");
-//		
-//		siteDao.checkUrl(newInfo);
+		NewInfo newInfo = new NewInfo();
+		newInfo.setImg("img");
+		newInfo.setAnchorText("한글이 들어갈까?");
+		newInfo.setLink("www.test.com");
+		newInfo.setSiteId("5");
+		
+		siteDao.checkUrl(newInfo);
 		}
 		
 		{
 //		TargetSite ts = new TargetSite();
 //		ts.setCheckInterval(40);
-//		ts.setName("Test Name");
-//		ts.setRegUser("Test User");
-//		ts.setTargetUrl("http://www.daum.net/");
+//		ts.setName("한글이름");
+//		ts.setRegUser("한글유저");
+//		ts.setTargetUrl("http://www.naver.com/");
 //		
 //		siteDao.addMonitorSite(ts);
 		}

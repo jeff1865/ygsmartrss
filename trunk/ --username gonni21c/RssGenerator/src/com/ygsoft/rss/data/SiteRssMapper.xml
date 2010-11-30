@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 
-<mapper namespace="myBatis.mapper.UserMapper">
-	<select id="getUserList" resultType="User">
-		SELECT userid, name FROM user
-	</select>
-	
-	<insert id="addUser" parameterType="User">
-		INSERT into user(userid, name) values(#{userid}, #{name})
-	</insert>
-</mapper>
- -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.ygsoft.rss.data.SiteRssMapper">
 	
 	<select id="getRegSiteList" resultType="TargetSite">
@@ -40,8 +28,8 @@
 		where site_id = #{siteId}
 	</select>
 	
-	<insert id="checkInfo" parameterType="NewInfo">
-		insert into test_abc3(anc_url, anc_text, anc_img, dup_cnt, regDate)
+	<insert id="checkInfo" parameterType="NewInfo" flushCache="true">
+		insert into test_abc${siteId} (anc_url, anc_text, anc_img, dup_cnt, regDate)
 		values(#{link}, #{anchorText}, #{img}, 0, now())
 		on duplicate key update dup_cnt = dup_cnt + 1;
 	</insert>

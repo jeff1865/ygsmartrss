@@ -28,6 +28,31 @@
 		where site_id = #{siteId}
 	</select>
 	
+	<select id="getRegSiteFromUrl" parameterType="string" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser" 
+		from regsites 
+		where target_url = #{url}
+	</select>
+	
+	<update id="createDataTable" parameterType="string">
+		CREATE TABLE ${tableName} (
+					anc_url VARCHAR(381) NOT NULL,
+					anc_text VARCHAR(256),
+					anc_img VARCHAR(256), 
+					dup_cnt INTEGER UNSIGNED NOT NULL,
+					regDate TIMESTAMP default 0,
+					latestDate TIMESTAMP default current_timestamp on update current_timestamp,
+					PRIMARY KEY (anc_url)
+					);
+	</update>
+	
 	<insert id="checkInfo" parameterType="NewInfo" flushCache="true">
 		insert into test_abc${siteId} (anc_url, anc_text, anc_img, dup_cnt, regDate)
 		values(#{link}, #{anchorText}, #{img}, 0, now())

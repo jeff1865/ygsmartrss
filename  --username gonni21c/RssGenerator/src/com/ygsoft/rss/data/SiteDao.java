@@ -4,14 +4,16 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.TransactionIsolationLevel;
 import org.apache.log4j.Logger;
-import com.ygsoft.rss.NewInfo;
-import com.ygsoft.rss.TargetSite;
 
-public class SiteDao implements ISiteDao {
+public class SiteDao {//implements ISiteDao {
 
 	private SqlSessionFactory sqlSessionFactory = null;
 	private Logger log = Logger.getLogger(SiteDao.class);
@@ -64,24 +66,16 @@ public class SiteDao implements ISiteDao {
 	
 	public void createSiteDataTable(String tableName){
 		SqlSession session = this.sqlSessionFactory.openSession();
-		Connection conn = session.getConnection();
-		try {
-			Statement stmt = conn.createStatement();
-			stmt.execute("CREATE TABLE " + tableName + " (" +
-					"anc_url VARCHAR(381) NOT NULL," +
-					"anc_text VARCHAR(256) NOT NULL," +
-					"anc_img VARCHAR(256) NOT NULL," +
-					"dup_cnt INTEGER UNSIGNED NOT NULL," +
-					"regDate TIMESTAMP default 0," +
-					"latestDate TIMESTAMP default current_timestamp on update current_timestamp," +
-					"PRIMARY KEY (anc_url)" +
-					");");
-			stmt.close();
-			conn.commit();
-			//conn.close();
-		} catch (SQLException e) {
+		
+		try	{
+			Map<String, Object> parameters = new HashMap<String, Object>();
+			parameters.put("tableName", tableName);
+			session.update("com.ygsoft.rss.data.SiteRssMapper.createDataTable", parameters);
+			session.commit();
+			log.debug("Table creation successfully completed.." + tableName);
+		} catch(Exception e){
 			e.printStackTrace();
-			throw new DataLayerException("Cannot create the stored site table..\r\n" + e.getMessage());
+			throw new DataLayerException("Cannot check the new information because of DB problem..");
 		} finally {
 			session.close();
 		}
@@ -117,6 +111,7 @@ public class SiteDao implements ISiteDao {
 		try	{
 			retTargetSite = (TargetSite)session.selectOne("com.ygsoft.rss.data.SiteRssMapper.getRegSite", 
 					siteId);
+			
 			session.commit();
 		} catch(Exception e){
 			e.printStackTrace();
@@ -130,11 +125,21 @@ public class SiteDao implements ISiteDao {
 	
 	private void defaultInsertAction(String func, Object arg, String exceptionMsg){
 		SqlSession session = this.sqlSessionFactory.openSession();
+						
 		try	{
+			session.getConnection().setAutoCommit(false);
 			session.insert(func, arg);
+			
+			//
+			Map<String, Object> parameters = new HashMap<String, Object>();
+			parameters.put("tableName", "test_abc9");
+			session.update("com.ygsoft.rss.data.SiteRssMapper.createDataTable", parameters);
+			//
 			session.commit();
 		} catch(Exception e){
+			System.out.println("--------------------------");
 			e.printStackTrace();	// need to remove
+			session.rollback();
 			throw new DataLayerException(exceptionMsg + "\r\n" + e.getMessage());
 		} finally {
 			session.close();
@@ -148,23 +153,23 @@ public class SiteDao implements ISiteDao {
 		
 		//siteDao.createSiteDataTable("test_abc7");
 		{
-		NewInfo newInfo = new NewInfo();
-		newInfo.setImg("img");
-		newInfo.setAnchorText("한글이 들어갈까?");
-		newInfo.setLink("www.test.com");
-		newInfo.setSiteId("5");
-		
-		siteDao.checkUrl(newInfo);
+//		NewInfo newInfo = new NewInfo();
+//		newInfo.setImg("img");
+//		newInfo.setAnchorText("한글이 들어갈까?");
+//		newInfo.setLink("www.test.com");
+//		newInfo.setSiteId("5");
+//		
+//		siteDao.checkUrl(newInfo);
 		}
 		
 		{
-//		TargetSite ts = new TargetSite();
-//		ts.setCheckInterval(40);
-//		ts.setName("한글이름");
-//		ts.setRegUser("한글유저");
-//		ts.setTargetUrl("http://www.naver.com/");
-//		
-//		siteDao.addMonitorSite(ts);
+		TargetSite ts = new TargetSite();
+		ts.setCheckIntervalMin(40);
+		ts.setName("한글이름");
+		ts.setRegUser("한글유저");
+		ts.setTargetUrl("http://www.naver000004.com/");
+		
+		siteDao.addMonitorSite(ts);
 		}
 		
 		{
@@ -174,5 +179,11 @@ public class SiteDao implements ISiteDao {
 //			System.out.println("-------------------------------------");
 //		}
 		}
+	}
+
+	
+	public TargetSite getTargetSite(String url) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

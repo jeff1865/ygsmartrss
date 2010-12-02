@@ -1,4 +1,4 @@
-package com.ygsoft.rss;
+package com.ygsoft.rss.data;
 
 import java.sql.Timestamp;
 
@@ -47,9 +47,7 @@ public class TargetSite {
 	public int getCheckIntervalMin() {
 		return checkIntervalMin;
 	}
-	public void setCheckInterval(int checkIntervalMin) {
-		this.checkIntervalMin = checkIntervalMin;
-	}
+	
 	public String getName() {
 		return name;
 	}

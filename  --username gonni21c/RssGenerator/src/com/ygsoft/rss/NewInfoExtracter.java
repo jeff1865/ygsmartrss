@@ -3,13 +3,19 @@ package com.ygsoft.rss;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.ygsoft.rss.data.BindHelper;
 import com.ygsoft.rss.data.ISiteDao;
-import com.ygsoft.rss.data.SiteDao;
+import com.ygsoft.rss.data.JdbcSiteDao;
+import com.ygsoft.rss.data.LowDataAccess;
+import com.ygsoft.rss.data.NewInfo;
 import com.ygsoft.util.web.Anchor;
 import com.ygsoft.util.web.AnchorFilter;
 
 public class NewInfoExtracter {
+	
+	Logger log = Logger.getLogger(NewInfoExtracter.class);
 	
 	private ISiteDao siteDao = null;
 	private String targetUrl = null;
@@ -19,7 +25,7 @@ public class NewInfoExtracter {
 	}
 	
 	public String getSiteId(){
-		return "5";
+		return "6";
 	}
 	
 	public void setSiteDao(ISiteDao siteDao) {
@@ -34,15 +40,8 @@ public class NewInfoExtracter {
 		this.printObjectList(anchorTexts);
 		
 		List<NewInfo> lstNewInfo = this.convertNewInfoList(anchorTexts);
-//		if(this.siteDao != null)
-//		{
-//			for(NewInfo ni : lstNewInfo){
-//				int checkUrl = this.siteDao.checkUrl(ni);
-//				if(checkUrl == 1){
-//					arrList.add(ni);
-//				}
-//			}
-//		}
+		log.debug("Total extracted Info count : " + lstNewInfo.size());
+
 		arrList = this.siteDao.checkUrls(lstNewInfo);
 		
 		return arrList;
@@ -57,9 +56,14 @@ public class NewInfoExtracter {
 			{
 				niTemp = new NewInfo();
 				niTemp.setSiteId(this.getSiteId());
-				niTemp.setAnchorText(an.getText().get(0));
+				for(String strV : an.getText()){
+					if(strV.startsWith("[T]")){
+						niTemp.setAnchorText(strV);
+					} else if(strV.startsWith("[I]")){
+						niTemp.setImg("img");
+					}
+				}
 				niTemp.setLink(an.getUrl());
-				niTemp.setImg("img");
 				lstNewInfo.add(niTemp);
 			} else {
 				if(an.getUrl().length() > 361)
@@ -78,7 +82,9 @@ public class NewInfoExtracter {
 		
 	public static void main(String ... v){
 		NewInfoExtracter niExt = new NewInfoExtracter("http://www.daum.net");
-		SiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
+		//ISiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
+		LowDataAccess lda = new LowDataAccess(BindHelper.getSqlSessionFactory());
+		ISiteDao siteDao = new JdbcSiteDao(lda);
 		niExt.setSiteDao(siteDao);
 		
 		List<NewInfo> newInfos = niExt.getNewInfo();

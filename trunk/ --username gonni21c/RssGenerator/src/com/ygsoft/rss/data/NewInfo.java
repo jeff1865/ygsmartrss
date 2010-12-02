@@ -1,4 +1,4 @@
-package com.ygsoft.rss;
+package com.ygsoft.rss.data;
 
 public class NewInfo {
 	
@@ -6,6 +6,11 @@ public class NewInfo {
 	String anchorText;
 	String img;
 	String link;
+	
+	public NewInfo(){
+		this.anchorText = "null";
+		this.img = "null";
+	}
 	
 	public String getAnchorText() {
 		return anchorText;

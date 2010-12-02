@@ -22,4 +22,7 @@ public class BindHelper {
 		return sqlMapper;
 	}
 	
+	public static void main(String ... v){
+		;
+	}
 }

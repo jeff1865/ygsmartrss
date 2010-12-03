@@ -10,6 +10,7 @@ import com.ygsoft.rss.data.ISiteDao;
 import com.ygsoft.rss.data.JdbcSiteDao;
 import com.ygsoft.rss.data.LowDataAccess;
 import com.ygsoft.rss.data.NewInfo;
+import com.ygsoft.rss.data.TargetSite;
 import com.ygsoft.util.web.Anchor;
 import com.ygsoft.util.web.AnchorFilter;
 
@@ -18,24 +19,28 @@ public class NewInfoExtracter {
 	Logger log = Logger.getLogger(NewInfoExtracter.class);
 	
 	private ISiteDao siteDao = null;
-	private String targetUrl = null;
+	private int siteId = -1;
+	private TargetSite targetSite = null;
 	
-	public NewInfoExtracter(String url){
-		this.targetUrl = url;
-	}
-	
-	public String getSiteId(){
-		return "6";
-	}
-	
-	public void setSiteDao(ISiteDao siteDao) {
+	public NewInfoExtracter(ISiteDao siteDao, int id) throws CommonException {
 		this.siteDao = siteDao;
+		this.siteId = id;
+		
+		this.refreshTargetSiteInfo();
+	}
+	
+	public TargetSite getTargetSite() {
+		return targetSite;
+	}
+	
+	private void refreshTargetSiteInfo() throws CommonException {
+		this.targetSite = this.siteDao.getTargetSite(this.siteId);
 	}
 	
 	public List<NewInfo> getNewInfo(){
 		List<NewInfo> arrList = new ArrayList<NewInfo>();
 		
-		AnchorFilter test = new AnchorFilter(this.targetUrl);
+		AnchorFilter test = new AnchorFilter(this.targetSite.getTargetUrl());
 		List<Anchor> anchorTexts = test.getAnchorTexts();
 		this.printObjectList(anchorTexts);
 		
@@ -43,8 +48,20 @@ public class NewInfoExtracter {
 		log.debug("Total extracted Info count : " + lstNewInfo.size());
 
 		arrList = this.siteDao.checkUrls(lstNewInfo);
+		this.convertAbsLink(arrList);
 		
 		return arrList;
+	}
+	
+	private void convertAbsLink(List<NewInfo> lstInfo){
+		WebUtil webUtil = new WebUtil();
+		String tmp = null;
+		for(NewInfo ni : lstInfo){
+			tmp = ni.getLink();
+			if(!tmp.startsWith("http://")){
+				ni.setLink(webUtil.convertAbsAddr(this.targetSite.getTargetUrl(), tmp));
+			}
+		}
 	}
 	
 	private List<NewInfo> convertNewInfoList(List<Anchor> anchs){
@@ -55,7 +72,7 @@ public class NewInfoExtracter {
 			if(an.getText() != null && an.getText().size() > 0 && an.getUrl().length() < 362)
 			{
 				niTemp = new NewInfo();
-				niTemp.setSiteId(this.getSiteId());
+				niTemp.setSiteId("" + this.targetSite.getSiteId());
 				for(String strV : an.getText()){
 					if(strV.startsWith("[T]")){
 						niTemp.setAnchorText(strV);
@@ -73,7 +90,7 @@ public class NewInfoExtracter {
 		
 		return lstNewInfo;
 	}
-	
+		
 	private void printObjectList(List<? extends Object> objList){
 		for(Object o : objList){
 			System.out.println(o);
@@ -81,11 +98,16 @@ public class NewInfoExtracter {
 	}
 		
 	public static void main(String ... v){
-		NewInfoExtracter niExt = new NewInfoExtracter("http://www.daum.net");
-		//ISiteDao siteDao = new SiteDao(BindHelper.getSqlSessionFactory());
 		LowDataAccess lda = new LowDataAccess(BindHelper.getSqlSessionFactory());
 		ISiteDao siteDao = new JdbcSiteDao(lda);
-		niExt.setSiteDao(siteDao);
+		
+		NewInfoExtracter niExt = null;
+		
+		try {
+			niExt = new NewInfoExtracter(siteDao, 66);
+		} catch (CommonException e) {
+			e.printStackTrace();
+		}
 		
 		List<NewInfo> newInfos = niExt.getNewInfo();
 		System.out.println("-------------------------------------------");

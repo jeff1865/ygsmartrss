@@ -54,7 +54,7 @@
 	</update>
 	
 	<insert id="checkInfo" parameterType="NewInfo" flushCache="true">
-		insert into test_abc${siteId} (anc_url, anc_text, anc_img, dup_cnt, regDate)
+		insert into site_data_${siteId} (anc_url, anc_text, anc_img, dup_cnt, regDate)
 		values(#{link}, #{anchorText}, #{img}, 0, now())
 		on duplicate key update dup_cnt = dup_cnt + 1;
 	</insert>

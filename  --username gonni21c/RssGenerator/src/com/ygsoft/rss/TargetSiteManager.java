@@ -16,6 +16,14 @@ public class TargetSiteManager {
 	public TargetSiteManager(ISiteDao siteDao){
 		this.siteDao = siteDao;
 	}
+	
+	public NewInfoExtracter createExtractor(TargetSite ts){
+		try {
+			return new NewInfoExtracter(this.siteDao, ts.getSiteId());
+		} catch (CommonException e) {
+			return null;
+		}
+	}
 	/**
 	 * 	
 	 * @param url
@@ -68,7 +76,8 @@ public class TargetSiteManager {
 		JdbcSiteDao jsd = new JdbcSiteDao(lda);
 		TargetSiteManager tsm = new TargetSiteManager(jsd);
 		try {
-			int id = tsm.createNewTargetSite("http://www.donga.com", 100, "동아일보", "Admin_YG");
+			int id = tsm.createNewTargetSite("http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park",
+					100, "[클리앙] 모두의공원", "Admin_YG");
 			System.out.println("Created ID :" + id);
 		} catch (CommonException e) {
 			e.printStackTrace();

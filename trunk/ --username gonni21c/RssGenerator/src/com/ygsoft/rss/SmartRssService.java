@@ -1,5 +1,6 @@
 package com.ygsoft.rss;
 
+import java.io.File;
 import java.util.*;
 
 import org.apache.log4j.Logger;
@@ -73,7 +74,12 @@ public class SmartRssService extends Observable implements Runnable {
 		long initTime = Calendar.getInstance().getTimeInMillis();
 		
 		for(NewInfoExtracter nie : this.lstTargetStie){
-			nie.getNewInfo();
+			String strFileName = "sampleTest.xml";
+			try {
+				new RssXmlBuilder(nie.getTargetSite(), nie.getNewInfo(), new File(strFileName)).build();
+			} catch (CommonException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		initTime = Calendar.getInstance().getTimeInMillis() - initTime;

@@ -17,20 +17,20 @@ public class SmartRssService extends Observable implements Runnable {
 	private Logger log = Logger.getLogger(SmartRssService.class);
 	
 	private TargetSiteManager targetSiteManager = null;
-	private ArrayList<NewInfoExtracter> lstTargetStie = null;
+	private ArrayList<NewInfoExtractWorker> lstTargetStie = null;
 	private Thread thScheduler = null;
 	private volatile boolean runShc = false;
 	private long timeLine = 0;
 	
 	public SmartRssService(TargetSiteManager tsm){
 		this.targetSiteManager = tsm;
-		this.lstTargetStie = new ArrayList<NewInfoExtracter> ();
+		this.lstTargetStie = new ArrayList<NewInfoExtractWorker> ();
 	} 
 	
 	public void loadAll(){
 		List<TargetSite> tsl = this.targetSiteManager.getTargetSiteList();
 		for(TargetSite ts : tsl){
-			NewInfoExtracter ce = this.targetSiteManager.createExtractor(ts);
+			NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
 			if(ce != null)
 				this.lstTargetStie.add(ce);
 			else
@@ -73,11 +73,12 @@ public class SmartRssService extends Observable implements Runnable {
 		
 		long initTime = Calendar.getInstance().getTimeInMillis();
 		
-		for(NewInfoExtracter nie : this.lstTargetStie){
+		for(NewInfoExtractWorker nie : this.lstTargetStie){
 			String strFileName = "sampleTest.xml";
 			try {
 				new RssXmlBuilder(nie.getTargetSite(), nie.getNewInfo(), new File(strFileName)).build();
 			} catch (CommonException e) {
+				log.debug("" + e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -90,6 +91,5 @@ public class SmartRssService extends Observable implements Runnable {
 	public static void main(String ... v){
 		Calendar.getInstance().getTimeInMillis();
 	}
-
 	
 }

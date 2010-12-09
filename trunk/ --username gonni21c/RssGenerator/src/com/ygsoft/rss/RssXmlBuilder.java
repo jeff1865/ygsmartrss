@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.jdom.*;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
@@ -13,6 +14,8 @@ import com.ygsoft.rss.data.NewInfo;
 import com.ygsoft.rss.data.TargetSite;
 
 public class RssXmlBuilder {
+	
+	private Logger log = Logger.getLogger(RssXmlBuilder.class);
 	
 	private Element rootElem = null;
 	private TargetSite targetSite = null;
@@ -46,7 +49,7 @@ public class RssXmlBuilder {
 		
 		if(this.newInfoLst != null)
 			for(NewInfo newInfo : newInfoLst){
-				this.linkItems(channel);
+				this.linkItems(newInfo, channel);
 			}
 		
 		try {
@@ -89,15 +92,23 @@ public class RssXmlBuilder {
 		return elem;
 	}
 	
-	public void linkItems(Element channel){
-		Element item = new Element("channel");
+	public void linkItems(NewInfo newInfo, Element channel){
+		WebpageAnalyser wa = new WebpageAnalyser(newInfo);
+		try {
+			wa.analyse();
+		} catch (CommonException e) {
+			log.error("Cannot analyse site (" + e.getMessage() + "):" + wa.getLink());
+			return ;
+		}
+		
+		Element item = new Element("item");
 		{
-			item.addContent(new Element("title").addContent(new CDATA("..")));
-			item.addContent(new Element("link").addContent(".."));
-			item.addContent(new Element("description").addContent(new CDATA("..")));
-			item.addContent(new Element("dc:date").addContent(""));
-			item.addContent(new Element("author").addContent(new CDATA("..")));
-			item.addContent(new Element("category").addContent(new CDATA("..")));
+			item.addContent(new Element("title").addContent(new CDATA(wa.getTitle())));
+			item.addContent(new Element("link").addContent(wa.getLink()));
+			item.addContent(new Element("description").addContent(new CDATA(wa.getContents())));
+			item.addContent(new Element("dc:date").addContent(wa.getDate()));
+			item.addContent(new Element("author").addContent(new CDATA(wa.getAuthor())));
+			item.addContent(new Element("category").addContent(new CDATA(wa.getCategory())));
 		}
 		channel.addContent(item);
 	}

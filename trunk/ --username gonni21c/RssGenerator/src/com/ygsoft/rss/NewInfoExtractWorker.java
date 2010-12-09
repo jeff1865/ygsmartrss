@@ -14,15 +14,15 @@ import com.ygsoft.rss.data.TargetSite;
 import com.ygsoft.util.web.Anchor;
 import com.ygsoft.util.web.AnchorFilter;
 
-public class NewInfoExtracter {
+public class NewInfoExtractWorker {
 	
-	Logger log = Logger.getLogger(NewInfoExtracter.class);
+	Logger log = Logger.getLogger(NewInfoExtractWorker.class);
 	
 	private ISiteDao siteDao = null;
 	private int siteId = -1;
 	private TargetSite targetSite = null;
 	
-	public NewInfoExtracter(ISiteDao siteDao, int id) throws CommonException {
+	public NewInfoExtractWorker(ISiteDao siteDao, int id) throws CommonException {
 		this.siteDao = siteDao;
 		this.siteId = id;
 		
@@ -101,10 +101,10 @@ public class NewInfoExtracter {
 		LowDataAccess lda = new LowDataAccess(BindHelper.getSqlSessionFactory());
 		ISiteDao siteDao = new JdbcSiteDao(lda);
 		
-		NewInfoExtracter niExt = null;
+		NewInfoExtractWorker niExt = null;
 		
 		try {
-			niExt = new NewInfoExtracter(siteDao, 66);
+			niExt = new NewInfoExtractWorker(siteDao, 66);
 		} catch (CommonException e) {
 			e.printStackTrace();
 		}

@@ -17,9 +17,9 @@ public class TargetSiteManager {
 		this.siteDao = siteDao;
 	}
 	
-	public NewInfoExtracter createExtractor(TargetSite ts){
+	public NewInfoExtractWorker createExtractor(TargetSite ts){
 		try {
-			return new NewInfoExtracter(this.siteDao, ts.getSiteId());
+			return new NewInfoExtractWorker(this.siteDao, ts.getSiteId());
 		} catch (CommonException e) {
 			return null;
 		}

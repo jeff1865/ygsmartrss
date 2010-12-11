@@ -5,6 +5,7 @@ import java.util.*;
 
 import org.apache.log4j.Logger;
 
+import com.ygsoft.rss.data.NewInfo;
 import com.ygsoft.rss.data.TargetSite;
 
 /**
@@ -68,6 +69,7 @@ public class SmartRssService extends Observable implements Runnable {
 		}
 	}
 	
+	// TODO PageTemplate 추출루틴 구현
 	public int refreshInfos(){
 		log.debug("Refresh SITE info ..");
 		
@@ -87,6 +89,10 @@ public class SmartRssService extends Observable implements Runnable {
 		return (int)(initTime / (60 * 1000));
 	}
 	
+	//TODO template 규칙 검사
+	public void checkTemplate(List<NewInfo> newInfos){
+		;
+	}
 	
 	public static void main(String ... v){
 		Calendar.getInstance().getTimeInMillis();

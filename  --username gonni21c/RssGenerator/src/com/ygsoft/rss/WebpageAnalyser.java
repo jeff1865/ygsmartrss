@@ -19,6 +19,11 @@ import com.ygsoft.rss.filter.DefaultContentsFilter;
 import com.ygsoft.rss.filter.FilterException;
 import com.ygsoft.rss.filter.IHtmlContentsFilter;
 
+/**
+ * analysis process takes long time, this class should be used in thread
+ * @author Gonni
+ *
+ */
 public class WebpageAnalyser {
 	
 	private Logger log = Logger.getLogger(WebpageAnalyser.class);
@@ -70,7 +75,7 @@ public class WebpageAnalyser {
 		this.loadData();
 		
 		try {
-			this.contFilter.analyse(this.rootNode);
+			this.contFilter.analyse(this.rootNode, this.newInfo.getLink());
 		} catch (FilterException e) {
 			e.printStackTrace();
 			throw new CommonException("Cannot analyze page..");
@@ -89,6 +94,7 @@ public class WebpageAnalyser {
 		return this.newInfo.getLink();
 	}
 	
+	//TODO impl
 	public String getDate(){
 		//return this.contFilter.getDate();
 		return "Unknown";
@@ -98,6 +104,7 @@ public class WebpageAnalyser {
 		return this.contFilter.getSummarizedContetns();
 	}
 	
+	//TODO impl
 	public String getAuthor(){
 		//return this.contFilter.getAuthor();
 		return "Unknown";

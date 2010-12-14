@@ -1,6 +1,7 @@
 package com.ygsoft.rss;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -37,6 +38,8 @@ public class RssXmlBuilder {
 	}
 	
 	public void build() throws CommonException{
+		log.debug("Create & Update new RSS file : " + this.targetSite.getName());
+		
 		this.rootElem = new Element("rss");
 		List<Attribute> newAttributes = new ArrayList<Attribute>();
 		newAttributes.add(new Attribute("version", "2.0"));
@@ -54,7 +57,12 @@ public class RssXmlBuilder {
 		
 		try {
 		    XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-		    outputter.output(new Document(this.rootElem), System.out);
+		    Format format = Format.getPrettyFormat();
+		    format.setEncoding("EUC-KR");
+		    outputter.setFormat(format);
+		    System.out.println("RssFile Create.. " + this.targetSite.getName());
+		    outputter.output(new Document(this.rootElem), new FileOutputStream(this.targetFile));
+		    System.out.println("RssFile Create Completed.. " + this.targetSite.getName());
 		} catch (java.io.IOException e) {
 		    e.printStackTrace();
 		}
@@ -72,10 +80,9 @@ public class RssXmlBuilder {
 		Element image = new Element("image");
 		{
 			image.addContent(this.createSimpleElement("title", this.targetSite.getName()));
-			image.addContent(this.createSimpleElement("url", null));
-			image.addContent(this.createSimpleElement("link", null));
-			image.addContent(this.createSimpleElement("description", null));
-			image.addContent(new Element("description").addContent(".."));
+			image.addContent(this.createSimpleElement("url", "NA"));
+			image.addContent(this.createSimpleElement("link", "NA"));
+			image.addContent(this.createSimpleElement("description", "NA"));
 		}
 		channel.addContent(image);
 		
@@ -94,6 +101,7 @@ public class RssXmlBuilder {
 	
 	public void linkItems(NewInfo newInfo, Element channel){
 		WebpageAnalyser wa = new WebpageAnalyser(newInfo);
+
 		try {
 			wa.analyse();
 		} catch (CommonException e) {
@@ -106,7 +114,7 @@ public class RssXmlBuilder {
 			item.addContent(new Element("title").addContent(new CDATA(wa.getTitle())));
 			item.addContent(new Element("link").addContent(wa.getLink()));
 			item.addContent(new Element("description").addContent(new CDATA(wa.getContents())));
-			item.addContent(new Element("dc:date").addContent(wa.getDate()));
+			item.addContent(new Element("date").addContent(wa.getDate()));
 			item.addContent(new Element("author").addContent(new CDATA(wa.getAuthor())));
 			item.addContent(new Element("category").addContent(new CDATA(wa.getCategory())));
 		}

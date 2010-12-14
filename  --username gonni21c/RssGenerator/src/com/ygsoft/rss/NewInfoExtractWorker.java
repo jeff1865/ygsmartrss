@@ -2,6 +2,7 @@ package com.ygsoft.rss;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import org.apache.log4j.Logger;
 
@@ -14,19 +15,30 @@ import com.ygsoft.rss.data.TargetSite;
 import com.ygsoft.util.web.Anchor;
 import com.ygsoft.util.web.AnchorFilter;
 
-public class NewInfoExtractWorker {
+public class NewInfoExtractWorker extends Observable {
+	
+	public enum EWorkerStatus{
+		Running,
+		Waiting,
+		Stopped
+	}
 	
 	Logger log = Logger.getLogger(NewInfoExtractWorker.class);
 	
 	private ISiteDao siteDao = null;
 	private int siteId = -1;
 	private TargetSite targetSite = null;
+	private volatile EWorkerStatus status = EWorkerStatus.Stopped;
 	
 	public NewInfoExtractWorker(ISiteDao siteDao, int id) throws CommonException {
 		this.siteDao = siteDao;
 		this.siteId = id;
 		
 		this.refreshTargetSiteInfo();
+	}
+	
+	public synchronized EWorkerStatus getStatus() {
+		return this.status;
 	}
 	
 	public TargetSite getTargetSite() {
@@ -37,7 +49,9 @@ public class NewInfoExtractWorker {
 		this.targetSite = this.siteDao.getTargetSite(this.siteId);
 	}
 	
-	public List<NewInfo> getNewInfo(){
+	public synchronized List<NewInfo> getNewInfo(){
+		this.status = EWorkerStatus.Running;
+		
 		List<NewInfo> arrList = new ArrayList<NewInfo>();
 		
 		AnchorFilter test = new AnchorFilter(this.targetSite.getTargetUrl());
@@ -50,6 +64,7 @@ public class NewInfoExtractWorker {
 		arrList = this.siteDao.checkUrls(lstNewInfo);
 		this.convertAbsLink(arrList);
 		
+		this.status = EWorkerStatus.Waiting;
 		return arrList;
 	}
 	

@@ -75,7 +75,9 @@ public class WebpageAnalyser {
 		this.loadData();
 		
 		try {
-			this.contFilter.analyse(this.rootNode, this.newInfo.getLink());
+			System.out.println("====> WebPAGEa :" + this.rootNode);
+			//this.contFilter.analyse(this.rootNode, this.newInfo.getLink());
+			this.contFilter.analyse(this.rootNode, null);	// null should be NULL
 		} catch (FilterException e) {
 			e.printStackTrace();
 			throw new CommonException("Cannot analyze page..");

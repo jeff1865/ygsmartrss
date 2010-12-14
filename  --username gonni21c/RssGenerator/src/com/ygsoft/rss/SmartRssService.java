@@ -69,14 +69,15 @@ public class SmartRssService extends Observable implements Runnable {
 		}
 	}
 	
-	// TODO PageTemplate 추출루틴 구현
+	// TODO PageTemplate 추출루틴 구현 - 사이트별로 가능하도록 변형
 	public int refreshInfos(){
 		log.debug("Refresh SITE info ..");
 		
 		long initTime = Calendar.getInstance().getTimeInMillis();
 		
 		for(NewInfoExtractWorker nie : this.lstTargetStie){
-			String strFileName = "sampleTest.xml";
+			//TODO need to set property value
+			String strFileName = "/rss/SiteRSS" + nie.getTargetSite().getSiteId() + ".xml";
 			try {
 				new RssXmlBuilder(nie.getTargetSite(), nie.getNewInfo(), new File(strFileName)).build();
 			} catch (CommonException e) {
@@ -89,9 +90,34 @@ public class SmartRssService extends Observable implements Runnable {
 		return (int)(initTime / (60 * 1000));
 	}
 	
-	//TODO template 규칙 검사
+	//TODO template 규칙 검사 - thread scheduling 필요
 	public void checkTemplate(List<NewInfo> newInfos){
 		;
+	}
+	
+	public int refreshInfo(int siteId){
+		int res = -1;
+		for(NewInfoExtractWorker niew : this.lstTargetStie){
+			if(niew.getTargetSite().getSiteId() == siteId) {
+				log.info("Refresh RSS Information :" + niew.getTargetSite().getName());
+				
+				String strFileName = "rss/SiteRSS" + niew.getTargetSite().getSiteId() 
+							+ "_" + Calendar.getInstance().getTimeInMillis() +".xml";
+				try {
+					List<NewInfo> newInfos = niew.getNewInfo();
+					//TODO need to cache
+					System.out.println("========> EXTed New Info Count : " + newInfos.size());
+					
+					new RssXmlBuilder(niew.getTargetSite(), newInfos, new File(strFileName)).build();
+					
+					res = newInfos.size();
+				} catch (CommonException e) {
+					log.debug("" + e.getMessage());
+					e.printStackTrace();
+				}
+			}
+		}
+		return res;
 	}
 	
 	public static void main(String ... v){

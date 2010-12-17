@@ -153,12 +153,49 @@ public class JdbcSiteDao implements ISiteDao {
 		return getTargetAction.getResult();
 	}
 	
+	@Override
+	public void updateSiteStatus(final int siteId, final int status) {
+		this.lowDataAccess.excuteSqlActions(new AbstractChainDbAction<Object>(){
+
+			@Override
+			public void action(SqlSession session) {
+				TargetSite targetSite = new TargetSite();
+				targetSite.setSiteId(siteId);
+				targetSite.setCheckStatus(status);
+				
+				session.update("com.ygsoft.rss.data.SiteRssMapper.updateStatus", targetSite);
+			}
+
+			@Override
+			public Object getResult() {
+				return null;	// void function : no return value
+			}
+			
+		});
+		
+	}
+	
 	public static void main(String ... v){
 		LowDataAccess lda = new LowDataAccess(BindHelper.getSqlSessionFactory());
 		JdbcSiteDao jsd = new JdbcSiteDao(lda);
 		
-		TargetSite targetSite = jsd.getTargetSite("http://www.naver000004.com");
-		System.out.println(">" + targetSite);
+//		TargetSite ts = new TargetSite();
+//		ts.setCheckIntervalMin(50);
+//		ts.setName("a");
+//		ts.setRegUser("b");
+//		ts.setTargetUrl("http://www66789.naver.com/");
+//		ts.setCheckStatus(10);
+//		jsd.addMonitorSite(ts);
+		jsd.updateSiteStatus(67, 9);
+		
+		List<TargetSite> regsiteList = jsd.getRegsiteList();
+		for(TargetSite tsx : regsiteList){
+			System.out.println("--->" + tsx);
+		}
+		
+		
+//		TargetSite targetSite = jsd.getTargetSite("http://www.naver000004.com");
+//		System.out.println(">" + targetSite);
 		
 //		TargetSite ts = new TargetSite();
 //		ts.setCheckIntervalMin(50);
@@ -177,4 +214,6 @@ public class JdbcSiteDao implements ISiteDao {
 //		//dbActionList.add(jsd.createSiteDataTable("test_abc9"));
 //		lda.excuteSqlActions(dbActionList);
 	}
+
+	
 }

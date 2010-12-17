@@ -18,14 +18,14 @@ public class SmartRssService extends Observable implements Runnable {
 	private Logger log = Logger.getLogger(SmartRssService.class);
 	
 	private TargetSiteManager targetSiteManager = null;
-	private ArrayList<NewInfoExtractWorker> lstTargetStie = null;
+	private ArrayList<NewInfoExtractWorker> lstTargetSite = null;
 	private Thread thScheduler = null;
 	private volatile boolean runShc = false;
 	private long timeLine = 0;
 	
 	public SmartRssService(TargetSiteManager tsm){
 		this.targetSiteManager = tsm;
-		this.lstTargetStie = new ArrayList<NewInfoExtractWorker> ();
+		this.lstTargetSite = new ArrayList<NewInfoExtractWorker> ();
 	} 
 	
 	public void loadAll(){
@@ -33,10 +33,14 @@ public class SmartRssService extends Observable implements Runnable {
 		for(TargetSite ts : tsl){
 			NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
 			if(ce != null)
-				this.lstTargetStie.add(ce);
+				this.lstTargetSite.add(ce);
 			else
 				log.debug("Invalide site information ..");
 		}
+	}
+	
+	public List<NewInfoExtractWorker> getMonitorSiteList(){
+		return this.lstTargetSite;
 	}
 	
 	public void start(){
@@ -75,7 +79,7 @@ public class SmartRssService extends Observable implements Runnable {
 		
 		long initTime = Calendar.getInstance().getTimeInMillis();
 		
-		for(NewInfoExtractWorker nie : this.lstTargetStie){
+		for(NewInfoExtractWorker nie : this.lstTargetSite){
 			//TODO need to set property value
 			String strFileName = "/rss/SiteRSS" + nie.getTargetSite().getSiteId() + ".xml";
 			try {
@@ -97,7 +101,7 @@ public class SmartRssService extends Observable implements Runnable {
 	
 	public int refreshInfo(int siteId){
 		int res = -1;
-		for(NewInfoExtractWorker niew : this.lstTargetStie){
+		for(NewInfoExtractWorker niew : this.lstTargetSite){
 			if(niew.getTargetSite().getSiteId() == siteId) {
 				log.info("Refresh RSS Information :" + niew.getTargetSite().getName());
 				

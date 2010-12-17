@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>${title}</title>
+		<style type="text/css">
+			.button {
+	width: 70px;
+	height: 21px;
+	border: 0;
+	padding-bottom: 2px;
+	font-size: 12px;
+	background: url(../img/butGreenMed.gif) top left no-repeat;
+	text-align: center;
+	color: #fff  !important;
+	font-weight: normal;
+	background-color: inherit; 
+	cursor:pointer;
+}
+
+a:link    { text-decoration:none; color:#49166D ;font-size:small;}
+a:visited { text-decoration:none; color:#49166D ;font-size:small;}
+a:hover {
+color:#c64ff7;
+background-color:transparent;
+text-decoration:underline !important;
+font-size:small;
+}
+a:active  { text-decoration:underline; color:#FF0000; color:#c64ff7; }
+
+a.no-uline:link    { text-decoration:none ;font-size:small;}
+a.no-uline:visited { text-decoration:none ;font-size:small;}
+a.no-uline:hover   { text-decoration:underline;font-size:small; color:#c64ff7; }
+a.no-uline:active  { text-decoration:none ;font-size:small;}
+
+hr.delim {
+height:1px;
+border:0;
+border-bottom:1px solid #eee;
+color:#dedede;
+display:block;
+margin:0 0 5px;
+padding:0 0 3px;
+}
+
+hr.bt {
+height:1px;
+border:0;
+border-bottom:1px solid #6c0;
+color:#6c0;
+display:block;
+margin:0 0 5px;
+padding:0 0 3px;
+}
+
+div.bottomFont {
+		color:#666;
+		font-size:small;
+	}
+
+font.KE {font-size:small; font-stile:italic; font-weight:bold; color:#9b88a9; }
+font.ME {font-size:small;  color:#6d458a; }
+
+font.midsubject {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 24px;
+  color:#416;
+}
+
+font.mid2sub {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-weight:bold;
+  font-size: 16px;
+  color:#416;
+}
+
+font.mid2cont {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#333;
+}
+
+table.mid2cont {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#333;
+}
+
+table.subj2 {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-weight:bold;
+  font-size: 12px;
+  color:#333;
+}
+
+table.smalla {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 10px;
+  color:#333;
+}
+
+font.mid2msg {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#444;
+}
+
+table.stdgreen {
+  vertical-align:middle;
+  background-color:#f0fff0;
+  padding-left:20px;
+  padding-right:20px;
+  border-right:2px solid #6c0;
+  border-top:1px solid #6c0;
+  border-left:1px solid #6c0;
+  border-bottom:2px solid #6c0;
+  color:#333;
+  text-align: left;
+}
+		</style>
+	</head>
+	<body>
+		<table width="800" align="center">
+			<tr>
+				<td>@{Header}</td>
+			</tr>
+			<tr>
+				<td>@{Main}</td>
+			</tr>
+			<tr>
+				<td>@{Footer}</td>
+			</tr>
+		</table>
+	</body>
+</html>

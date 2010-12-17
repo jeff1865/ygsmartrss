@@ -9,7 +9,16 @@ public class TargetSite {
 	String name;
 	Timestamp regDate, latestDate;
 	String regUser;
+	int checkStatus;
 	
+	public int getCheckStatus() {
+		return checkStatus;
+	}
+
+	public void setCheckStatus(int checkStatus) {
+		this.checkStatus = checkStatus;
+	}
+
 	public String toString(){
 		return "SiteID :" + this.siteId + "\n" + 
 			    "TargetUrl :" + this.targetUrl + "\n" + 
@@ -17,7 +26,8 @@ public class TargetSite {
 			    "Name :" + this.name + "\n" +
 			    "RegDate :" + this.regDate + "\n" +
 			    "LatestDate :" + this.latestDate + "\n" +
-			    "RegUser :" + this.regUser ;
+			    "RegUser :" + this.regUser + "\n" +
+			    "Status : " + this.checkStatus;
 	}
 	
 	public Timestamp getLatestDate() {

@@ -11,7 +11,8 @@
 			name as "name", 
 			reg_date as "regDate", 
 			latest_date as "latestDate", 
-			reg_user as "regUser" 
+			reg_user as "regUser",
+			check_status as "checkStatus"
 		from regsites	
 	</select>
 	
@@ -23,7 +24,8 @@
 			name as "name", 
 			reg_date as "regDate", 
 			latest_date as "latestDate", 
-			reg_user as "regUser" 
+			reg_user as "regUser",
+			check_status as "checkStatus"
 		from regsites 
 		where site_id = #{siteId}
 	</select>
@@ -36,10 +38,15 @@
 			name as "name", 
 			reg_date as "regDate", 
 			latest_date as "latestDate", 
-			reg_user as "regUser" 
+			reg_user as "regUser", 
+			check_status as "checkStatus"
 		from regsites 
 		where target_url = #{url}
 	</select>
+	
+	<update id="updateStatus" parameterType="TargetSite">
+		update regsites set check_status = #{checkStatus} where site_id = #{siteId}
+	</update>
 	
 	<update id="createDataTable" parameterType="string">
 		CREATE TABLE ${tableName} (
@@ -60,8 +67,8 @@
 	</insert>
 		
 	<insert id="addTargetSite" parameterType="TargetSite">
-		insert into regsites(target_url, check_interval_min, name, reg_date, latest_date, reg_user)
-		values(#{targetUrl},#{checkIntervalMin}, #{name}, now(), now(), #{regUser});
+		insert into regsites(target_url, check_interval_min, name, reg_date, latest_date, reg_user, check_status)
+		values(#{targetUrl},#{checkIntervalMin}, #{name}, now(), now(), #{regUser}, #{checkStatus});
 	</insert>
 		
 </mapper>

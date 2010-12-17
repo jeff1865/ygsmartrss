@@ -1,0 +1,117 @@
+.button {
+	width: 70px;
+	height: 21px;
+	border: 0;
+	padding-bottom: 2px;
+	font-size: 12px;
+	background: url(../img/butGreenMed.gif) top left no-repeat;
+	text-align: center;
+	color: #fff  !important;
+	font-weight: normal;
+	background-color: inherit; 
+	cursor:pointer;
+}
+
+
+
+/*
+기본값 + 마우스 가져가면 링크 텍스트를 빨간색으로 변경
+모든 링크들에 일괄적으로 적용됩니다.
+*/
+a:link    { text-decoration:none; color:#49166D ;font-size:small;}
+a:visited { text-decoration:none; color:#49166D ;font-size:small;}
+a:hover {
+color:#c64ff7;
+background-color:transparent;
+text-decoration:underline !important;
+font-size:small;
+}
+a:active  { text-decoration:underline; color:#FF0000; color:#c64ff7; }
+
+
+/*
+마우스 가져갔을 때에만, 링크 텍스트에 밑줄 넣기
+no-uline 이라는 클래스를 지정한 링크에만 적용됨
+*/
+a.no-uline:link    { text-decoration:none ;font-size:small;}
+a.no-uline:visited { text-decoration:none ;font-size:small;}
+a.no-uline:hover   { text-decoration:underline;font-size:small; color:#c64ff7; }
+a.no-uline:active  { text-decoration:none ;font-size:small;}
+
+hr.delim {
+height:1px;
+border:0;
+border-bottom:1px solid #eee;
+color:#dedede;
+display:block;
+margin:0 0 5px;
+padding:0 0 3px;
+}
+
+hr.bt {
+height:1px;
+border:0;
+border-bottom:1px solid #6c0;
+color:#6c0;
+display:block;
+margin:0 0 5px;
+padding:0 0 3px;
+}
+
+div.bottomFont {
+		color:#666;
+		font-size:small;
+	}
+
+font.KE {font-size:small; font-stile:italic; font-weight:bold;}
+font.ME {font-size:small;  color:#6d458a; }
+
+font.midsubject {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 24px;
+  color:#416;
+}
+
+font.mid2sub {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-weight:bold;
+  font-size: 16px;
+  color:#416;
+}
+
+font.mid2cont {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#333;
+}
+
+table.mid2cont {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#333;
+}
+
+table.smalla {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 10px;
+  color:#333;
+}
+
+font.mid2msg {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
+  color:#444;
+}
+
+table.stdgreen {
+  vertical-align:middle;
+  background-color:#f0fff0;
+  padding-left:20px;
+  padding-right:20px;
+  border-right:2px solid #6c0;
+  border-top:1px solid #6c0;
+  border-left:1px solid #6c0;
+  border-bottom:2px solid #6c0;
+  color:#333;
+  text-align: left;
+}

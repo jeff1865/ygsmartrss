@@ -86,10 +86,16 @@ table.mid2cont {
   color:#333;
 }
 
-table.subj2 {
+tr.subj2 {
   font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
   font-weight:bold;
-  font-size: 12px;
+  font-size: 13px;
+  color:#333;
+}
+
+tr.subj2cont {
+  font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
+  font-size: 13px;
   color:#333;
 }
 

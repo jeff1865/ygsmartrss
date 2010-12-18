@@ -12,8 +12,22 @@
 	<tr>
 		<td bgcolor="#f0f0f0">
 			<br>
-			<table width="95%" border="1" align="center" class="subj2">
-				<tr bgcolor="white">
+			<table width="95%" border="1" align="center">
+				<tr>
+					<td align="right" bgcolor="white" colspan="8">
+					<br>
+					<!-- 검색메뉴 -->
+					<form action="search.gdp" method="get">
+						<label><font size="2">등록검색</font></label>
+						<input type="text" name="query" value="검색어 입력"></input>
+						<input type="submit" name="submit" value="검색"></input>
+					</form> 
+					[<a href="registerSite.gdp">신규등록</a>]
+					<br>
+					
+					</td>
+				</tr>
+				<tr bgcolor="white" valign="middle"  class="subj2">
 					<td align="center">ID</td>
 					<td align="center">Site</td>
 					<td align="center">Updated</td>
@@ -25,6 +39,7 @@
 				</tr>
 				${siteList}
 			</table>
+			<br>
 		</td>
 	</tr>
 </table>

@@ -31,7 +31,7 @@ public class Main {
 		
 		System.out.println("==================[ Get New Info ]====================");
 		SmartRssService srSvc = new SmartRssService(tsm);
-		srSvc.loadAll();
+		srSvc.loadAll(true);
 		srSvc.refreshInfo(66);	// CLIEN ID : 66
 		
 //		// New Info Extract Module

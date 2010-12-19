@@ -39,7 +39,7 @@ public class WebMain {
 		
 //		System.out.println("==================[ Get New Info ]====================");
 		SmartRssService srSvc = new SmartRssService(tsm);
-		srSvc.loadAll();
+		srSvc.loadAll(true);
 //		srSvc.refreshInfo(66);	// CLIEN ID : 66
 		
 		
@@ -52,6 +52,7 @@ public class WebMain {
 		
 		ServiceManager<Gdplet> sMng = new ServiceManager<Gdplet>();
 		sMng.addService(new GdpMain(srSvc, vt));
+		sMng.addService(new GdpRegisterSite(srSvc, vt, tsm));
 //		sMng.addService(new Hello());
 //		sMng.addService(new Exam());
 //		sMng.addService(new FileTransExam());

@@ -33,18 +33,18 @@ public class GdpMain extends Gdplet {
 			List<NewInfoExtractWorker> msList = this.smSvc.getMonitorSiteList();
 			for(NewInfoExtractWorker nieWorker : msList){
 				TargetSite ts = nieWorker.getTargetSite();
-				strRet += "<tr>" +
-						"<td>"+ts.getSiteId()+"</td>" +
-						"<td>"+ts.getName()+"</td>" +
+				strRet += "<tr valign=\"middle\" class=\"subj2cont\">" +
+						"<td valign=\"middle\">"+ts.getSiteId()+"<img src=\"img/btn_delete_s.jpg\"/></td>" +
+						"<td>"+ts.getName()+"<b>[3]</b></td>" +
 						"<td>"+ts.getLatestDate()+"</td>" +
-						"<td>"+ts.getCheckIntervalMin()+"</td>" +
+						"<td  valign=\"middle\">"+ts.getCheckIntervalMin()+"<img src=\"img/btn_refresh_s.jpg\"/></td>" +
 						"<td>"+ts.getCheckStatus()+"</td>" +
 						"<td>N/A</td>" +
 						"<td><img src=\"img/rss.gif\" /></td>" +
 						"<td>N/A</td>" +
 						"</tr>" +
-						"<tr>" +
-						"<td>URL</td><td colspan=\"7\">" + ts.getTargetUrl() +
+						"<tr class=\"subj2\">" +
+						"<td bgcolor=\"white\">URL</td><td colspan=\"7\">" + ts.getTargetUrl() +
 						"</td>" +
 						"</tr>";
 			}

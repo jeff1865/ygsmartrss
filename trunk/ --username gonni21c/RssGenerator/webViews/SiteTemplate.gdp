@@ -10,7 +10,7 @@
 	border: 0;
 	padding-bottom: 2px;
 	font-size: 12px;
-	background: url(../img/butGreenMed.gif) top left no-repeat;
+	background: url(../img/butPurpleMed.gif) top left no-repeat;
 	text-align: center;
 	color: #fff  !important;
 	font-weight: normal;
@@ -101,7 +101,7 @@ tr.subj2cont {
 
 table.smalla {
   font-family: 'HelveticaNeueLTStd35Thin',Arial,sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   color:#333;
 }
 
@@ -120,6 +120,19 @@ table.stdgreen {
   border-top:1px solid #6c0;
   border-left:1px solid #6c0;
   border-bottom:2px solid #6c0;
+  color:#333;
+  text-align: left;
+}
+
+table.stdpurple {
+  vertical-align:middle;
+  background-color:#ede8f0;
+  padding-left:20px;
+  padding-right:20px;
+  border-right:2px solid #619;
+  border-top:1px solid #619;
+  border-left:1px solid #619;
+  border-bottom:2px solid #619;
   color:#333;
   text-align: left;
 }

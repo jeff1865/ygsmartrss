@@ -1,0 +1,121 @@
+<table width="100%" border="1">
+	<tr><td bgcolor="lightgrey">
+	<table align="left" class="ME" cellpadding="0" cellspacing="0" height="22">
+	<tr style="font-weight:bold;">
+		<td width="120" align="center" bgcolor="grey"><a href="main.gdp">Main</a></td>
+		<td width="120" align="center"><a href="issue.gdp">실시간 이슈</a></td>
+		<td width="120" align="center"><a href="guestbook.gdp">GuestBook</a></td>
+		<td width="120" align="center"><a href="about.gdp">About</a></td>
+	</tr>
+	</table>
+	</tr>
+	<tr>
+		<td bgcolor="#f0f0f0">
+			<br>
+			<table width="95%" border="1" align="center">
+				<tr>
+					<td align="right" bgcolor="white" colspan="8">
+					
+<!-- Main Page -->					
+					
+<font class="midsubject">Register</font>
+<hr class="delim" width="100%">
+<br />
+<table width="500" align="center">
+	<tr>
+		<td align="left">
+<div id="warning"></div>
+
+<script language="JavaScript">
+var name = navigator.appName, ver = navigator.appVersion,
+ver_int = parseInt(navigator.appVersion), ua = navigator.userAgent, infostr;
+if(name == "Microsoft Internet Explorer")
+	document.getElementById('warning').innerHTML= '<font color=red>본 페이지는 IE9  이상에서 정상 출력됩니다.</font>';
+</script>
+		
+		<table class="stdpurple" align="left" width="100%" cellpadding="3">
+			<tr height="50">
+				<td height="50"><font class="mid2sub">사이트 등록 정보입력</font><br>
+				<hr class="delim" width="100%">
+
+				</td>
+			</tr>
+
+			<tr height="40">
+				<td><font class="mid2cont">아래 항목은 필수입력 사항입니다. 본 사이트에서는 Email주소를 ID로 사용합니다.
+				</font></td>
+			</tr>
+
+			<tr>
+				<td>
+				
+				<form method="GET" action="registerSite.gdp">
+				<table width="100%" class="mid2cont">
+					<tr>
+						<td width="70">사이트명 :</td>
+						<td><input type="text" name="siteName"></td>
+					</tr>
+					<tr>
+						<td width="70"></td>
+						<td><font class="smalla">대표할 수 있는 이름<br>(예: [디씨인사이드] 자동차갤러리)</font></td>
+					</tr>
+					
+					<tr>
+						<td>URL :</td>
+						<td><input type="text" name="url" value="http://" size="45"></td>
+					</tr>
+					<tr>
+						<td width="70"></td>
+						<td><font class="smalla">대상 Page URL 입력 (예: http://gall.dcinside.com/list.php?id=car_new)</font></td>
+					</tr>
+					
+					<tr>
+						<td>갱신주기 :</td>
+						<td><input type="text" name="checkInterval" value="30" size="3">분</td>
+					</tr>
+					<tr>
+						<td width="70"></td>
+						<td><font class="smalla">신규정보 등록 여부검사 시간(단위:분), 10 이상</font></td>
+					</tr>
+					
+					<tr>
+						<td colspan="3"><br/><input type="submit" value="등록신청"
+							class="button"></td>
+					</tr>
+				</table>
+				</form>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+				<hr class="delim" />
+				<br />
+				<font class="mid2msg">사이트를 패턴기반으로 분석합니다. 사이트에 따라 분석이 불가능할 수도 있습니다.</font> <br />
+				<br />
+				</td>
+			</tr>
+		</table>
+
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-left: 20px; padding-right: 20px;"><font
+			class="mid2cont"> * 웹브라우저 설정에 따라서 정상적으로 동작하지 않을 수 있습니다. 문제가 지속
+		발생시 관리자에게 문의해 주세요. </font></td>
+	</tr>
+</table>
+
+<br>
+<br>
+
+<!-- Main Page -->
+					
+					
+					</td>
+				</tr>
+			</table>
+			<br>
+		</td>
+	</tr>
+</table>

@@ -8,7 +8,7 @@ import com.ygsoft.rss.data.JdbcSiteDao;
 import com.ygsoft.rss.data.LowDataAccess;
 import com.ygsoft.rss.data.TargetSite;
 
-public class TargetSiteManager {
+public class TargetSiteManager extends Observable {
 	
 	private ISiteDao siteDao = null;
 	private static String siteNameTable = "site_data_";
@@ -65,6 +65,9 @@ public class TargetSiteManager {
 		targetSite.setRegUser(regUserName);
 		
 		this.siteDao.addMonitorSite(targetSite);
+		
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public List<TargetSite> getTargetSiteList(){

@@ -13,7 +13,7 @@ import com.ygsoft.rss.data.TargetSite;
  * @author Gonni
  *
  */
-public class SmartRssService extends Observable implements Runnable {
+public class SmartRssService extends Observable implements Runnable, Observer {
 	
 	private Logger log = Logger.getLogger(SmartRssService.class);
 	
@@ -26,17 +26,38 @@ public class SmartRssService extends Observable implements Runnable {
 	public SmartRssService(TargetSiteManager tsm){
 		this.targetSiteManager = tsm;
 		this.lstTargetSite = new ArrayList<NewInfoExtractWorker> ();
+		
+		tsm.addObserver(this);
 	} 
 	
-	public void loadAll(){
+	public void loadAll(boolean isInit){
 		List<TargetSite> tsl = this.targetSiteManager.getTargetSiteList();
-		for(TargetSite ts : tsl){
-			NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
-			if(ce != null)
-				this.lstTargetSite.add(ce);
-			else
-				log.debug("Invalide site information ..");
+		if(isInit) {	// load all
+			for(TargetSite ts : tsl){
+				NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
+				if(ce != null)
+					this.lstTargetSite.add(ce);
+				else
+					log.debug("Invalide site information ..");
+			}
+		} else {	// add new
+			for(TargetSite ts : tsl){
+				if(!this.isLoaded(ts)){
+					NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
+					if(ce != null)
+						this.lstTargetSite.add(ce);
+				}
+			}
 		}
+	}
+	
+	private boolean isLoaded(TargetSite ts){
+		for(NewInfoExtractWorker worker : this.lstTargetSite){
+			if(worker.getTargetSite().getSiteId() == ts.getSiteId()){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public List<NewInfoExtractWorker> getMonitorSiteList(){
@@ -126,6 +147,13 @@ public class SmartRssService extends Observable implements Runnable {
 	
 	public static void main(String ... v){
 		Calendar.getInstance().getTimeInMillis();
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		log.debug("[Internal Event]Load new state ..");
+		this.loadAll(false);
 	}
 	
 }

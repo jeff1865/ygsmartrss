@@ -33,7 +33,7 @@ public class ViewTemplate {
 			group = group.substring(2, group.length() -1);
 			
 			String templateContext = this.getTemplateContext(group);
-			if(templateContext != null)
+			if(templateContext != null && group != null)
 				this.rtCache.put(group, templateContext);
 		}
 	}
@@ -68,7 +68,7 @@ public class ViewTemplate {
 		String key = null;
 		while(keys.hasMoreElements()){
 			key = keys.nextElement();
-			System.out.println("key > " + key);
+			//System.out.println("key > " + key + ":" + this.rtCache.get(key));
 			result = result.replaceAll("\\@\\{" + key + "\\}", this.rtCache.get(key));
 		}
 				

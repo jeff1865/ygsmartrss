@@ -11,4 +11,5 @@ public interface ISiteDao {
 	public List<TargetSite> getRegsiteList();
 	public TargetSite getTargetSite(int siteId);
 	public TargetSite getTargetSite(String url);
+	public void removeMonitorSite(int id);
 }

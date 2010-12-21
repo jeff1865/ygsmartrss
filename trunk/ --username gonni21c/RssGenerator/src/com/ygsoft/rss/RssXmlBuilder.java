@@ -58,7 +58,7 @@ public class RssXmlBuilder {
 		try {
 		    XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
 		    Format format = Format.getPrettyFormat();
-		    format.setEncoding("EUC-KR");
+		    format.setEncoding("UTF-8");
 		    outputter.setFormat(format);
 		    System.out.println("RssFile Create.. " + this.targetSite.getName());
 		    outputter.output(new Document(this.rootElem), new FileOutputStream(this.targetFile));
@@ -105,7 +105,7 @@ public class RssXmlBuilder {
 		try {
 			wa.analyse();
 		} catch (CommonException e) {
-			log.error("Cannot analyse site (" + e.getMessage() + "):" + wa.getLink());
+			log.error("[IGnored Data]Cannot analyse site (" + e.getMessage() + "):" + wa.getLink());
 			return ;
 		}
 		

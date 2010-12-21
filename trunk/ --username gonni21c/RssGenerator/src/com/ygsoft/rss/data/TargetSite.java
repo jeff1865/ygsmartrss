@@ -14,6 +14,10 @@ public class TargetSite {
 	public int getCheckStatus() {
 		return checkStatus;
 	}
+	
+	public ESiteStatus getCheckStatusValue(){
+		return ESiteStatus.getEnumValue(this.checkStatus);
+	}
 
 	public void setCheckStatus(int checkStatus) {
 		this.checkStatus = checkStatus;

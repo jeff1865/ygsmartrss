@@ -53,6 +53,7 @@ public class WebMain {
 		ServiceManager<Gdplet> sMng = new ServiceManager<Gdplet>();
 		sMng.addService(new GdpMain(srSvc, vt));
 		sMng.addService(new GdpRegisterSite(srSvc, vt, tsm));
+		sMng.addService(new GdpRssReader(srSvc));
 //		sMng.addService(new Hello());
 //		sMng.addService(new Exam());
 //		sMng.addService(new FileTransExam());

@@ -5,6 +5,7 @@ import java.util.*;
 
 import org.apache.log4j.Logger;
 
+import me.yglib.htmlparser.CommonException;
 import me.yglib.htmlparser.TagAttribute;
 import me.yglib.htmlparser.Token;
 import me.yglib.htmlparser.TokenTag;
@@ -44,7 +45,13 @@ public class AnchorFilter {
 		} 
 		
 		HtmlDomBuilder domBuilder = new HtmlDomBuilder(bufPs);
-		List<Node> rootNode = domBuilder.build();
+		List<Node> rootNode = null;
+		try {
+			rootNode = domBuilder.build();
+		} catch (CommonException e) {
+			e.printStackTrace();
+			return null;
+		}
 		ArrayList<Anchor> lstRes = new ArrayList<Anchor>();
 		
 		for(Node node : rootNode){

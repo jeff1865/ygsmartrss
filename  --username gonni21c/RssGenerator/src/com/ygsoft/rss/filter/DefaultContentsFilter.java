@@ -7,6 +7,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.ygsoft.rss.WebUtil;
+
+import me.yglib.htmlparser.CommonException;
+import me.yglib.htmlparser.TagAttribute;
 import me.yglib.htmlparser.Token;
 import me.yglib.htmlparser.TokenTag;
 import me.yglib.htmlparser.TokenText;
@@ -26,8 +30,9 @@ public class DefaultContentsFilter implements IHtmlContentsFilter {
 	private List<NodeGroup> resGroup = null;
 	private HashSet<String> filteredTag = null;
 	private HashSet<String> viewIgnoredTag = null;
+	private String targetUrl = null;
 	
-	public DefaultContentsFilter(){
+	public DefaultContentsFilter(String url){
 		this.filteredTag = new HashSet<String>();
 		this.filteredTag.add("a");
 		this.filteredTag.add("br");
@@ -38,6 +43,8 @@ public class DefaultContentsFilter implements IHtmlContentsFilter {
 		this.viewIgnoredTag.add("form");
 		this.viewIgnoredTag.add("input");
 		this.viewIgnoredTag.add("textarea");
+		
+		this.targetUrl = url;
 	}
 	
 	@Override
@@ -108,14 +115,25 @@ public class DefaultContentsFilter implements IHtmlContentsFilter {
 		String result = "";
 		Token token = node.getToken();
 		String aroundTag = null;
-		
+				
 		if(token.getIndex() <= tokenEnd && token.getIndex() >= tokenStart){
 			if(token instanceof TokenTag){
 				TokenTag tTag = (TokenTag)token;
 				if(this.filteredTag.contains(tTag.getTagName().toLowerCase())){
 					//System.out.println("[TAG]>>>" + tTag.toHtml());
-					result += tTag.toHtml();
-					aroundTag = tTag.getTagName();
+					if(tTag.getTagName().equalsIgnoreCase("img")){
+						result += "<img ";
+						for(TagAttribute attr : tTag.getAttrs()){
+							if(attr.getAttrName().equalsIgnoreCase("src"))
+								result += "src=\"" 
+									+ new WebUtil().convertAbsAddr(this.targetUrl, attr.getAttrValue()) + "\""; 
+						}
+						result += ">";
+						aroundTag = tTag.getTagName();
+					} else {
+						result += tTag.toHtml();
+						aroundTag = tTag.getTagName();
+					}
 				} else{
 					//if(tTag.isClosedTag())
 						//System.out.println("[xTAG]" + tTag.getTagName());
@@ -261,9 +279,15 @@ public class DefaultContentsFilter implements IHtmlContentsFilter {
 		} 
 		
 		HtmlDomBuilder domBuilder = new HtmlDomBuilder(bufPs);
-		List<Node> rootNode = domBuilder.build();
+		List<Node> rootNode = null;
+		try {
+			rootNode = domBuilder.build();
+		} catch (CommonException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
-		DefaultContentsFilter dcf = new DefaultContentsFilter();
+		DefaultContentsFilter dcf = new DefaultContentsFilter(url);
 		try {
 			dcf.analyse(rootNode.get(0), null);
 		} catch (FilterException e) {

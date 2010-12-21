@@ -1,6 +1,7 @@
 package com.ygsoft.rss;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Observable;
 
@@ -18,9 +19,12 @@ import com.ygsoft.util.web.AnchorFilter;
 public class NewInfoExtractWorker extends Observable {
 	
 	public enum EWorkerStatus{
-		Running,
-		Waiting,
-		Stopped
+		Checking,
+		ManualRefresh,
+		Active,
+		Stopped,
+		Error,
+		Unknown
 	}
 	
 	Logger log = Logger.getLogger(NewInfoExtractWorker.class);
@@ -29,12 +33,19 @@ public class NewInfoExtractWorker extends Observable {
 	private int siteId = -1;
 	private TargetSite targetSite = null;
 	private volatile EWorkerStatus status = EWorkerStatus.Stopped;
+	private List<NewInfo> latestNewInfos = null;
 	
 	public NewInfoExtractWorker(ISiteDao siteDao, int id) throws CommonException {
 		this.siteDao = siteDao;
 		this.siteId = id;
 		
 		this.refreshTargetSiteInfo();
+		
+		this.latestNewInfos = new ArrayList<NewInfo>();
+	}
+	
+	public List<NewInfo> getLatestNewInfos(){
+		return this.latestNewInfos;
 	}
 	
 	public synchronized EWorkerStatus getStatus() {
@@ -47,10 +58,14 @@ public class NewInfoExtractWorker extends Observable {
 	
 	private void refreshTargetSiteInfo() throws CommonException {
 		this.targetSite = this.siteDao.getTargetSite(this.siteId);
+		if(this.targetSite.getCheckStatus() < 4)
+			this.status = EWorkerStatus.ManualRefresh;
+		else
+			this.status = EWorkerStatus.Stopped;
 	}
 	
 	public synchronized List<NewInfo> getNewInfo(){
-		this.status = EWorkerStatus.Running;
+		this.status = EWorkerStatus.Checking;
 		
 		List<NewInfo> arrList = new ArrayList<NewInfo>();
 		
@@ -64,8 +79,27 @@ public class NewInfoExtractWorker extends Observable {
 		arrList = this.siteDao.checkUrls(lstNewInfo);
 		this.convertAbsLink(arrList);
 		
-		this.status = EWorkerStatus.Waiting;
+		log.debug("Total new Information count :" + arrList.size());
+		arrList = this.filterDuplication(arrList);
+		
+		this.status = EWorkerStatus.Active;
+		this.latestNewInfos = arrList;
 		return arrList;
+	}
+	
+	public List<NewInfo> filterDuplication(List<NewInfo> lstNewInfo){
+		ArrayList<NewInfo> filteredInfos = new ArrayList<NewInfo>();
+		HashSet<String> hsChecker = new HashSet<String>();
+		for(NewInfo newInfo : lstNewInfo){
+			if(hsChecker.contains(newInfo.getLink())){
+				;//alToBeRemoved.add(lstNewInfo.indexOf(newInfo));
+			} else {
+				filteredInfos.add(newInfo);
+				hsChecker.add(newInfo.getLink());
+			}
+		}
+		
+		return filteredInfos;		
 	}
 	
 	private void convertAbsLink(List<NewInfo> lstInfo){
@@ -92,7 +126,9 @@ public class NewInfoExtractWorker extends Observable {
 					if(strV.startsWith("[T]")){
 						niTemp.setAnchorText(strV);
 					} else if(strV.startsWith("[I]")){
-						niTemp.setImg("img");
+//TODO need to change
+						//niTemp.setImg("img");
+						niTemp.setImg(strV);	// need to change abs path
 					}
 				}
 				niTemp.setLink(an.getUrl());

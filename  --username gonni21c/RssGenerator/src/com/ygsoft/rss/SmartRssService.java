@@ -22,13 +22,20 @@ public class SmartRssService extends Observable implements Runnable, Observer {
 	private Thread thScheduler = null;
 	private volatile boolean runShc = false;
 	private long timeLine = 0;
+	private RssCache rssCache = null;
 	
 	public SmartRssService(TargetSiteManager tsm){
 		this.targetSiteManager = tsm;
 		this.lstTargetSite = new ArrayList<NewInfoExtractWorker> ();
 		
+		this.rssCache = new RssCache();
+		
 		tsm.addObserver(this);
 	} 
+	
+	public TargetSiteManager getTargetSiteManager(){
+		return this.targetSiteManager;
+	}
 	
 	public void loadAll(boolean isInit){
 		List<TargetSite> tsl = this.targetSiteManager.getTargetSiteList();
@@ -39,16 +46,35 @@ public class SmartRssService extends Observable implements Runnable, Observer {
 					this.lstTargetSite.add(ce);
 				else
 					log.debug("Invalide site information ..");
+				
+				this.rssCache.loadCurrentFile(ts.getSiteId());
 			}
+			
 		} else {	// add new
 			for(TargetSite ts : tsl){
 				if(!this.isLoaded(ts)){
 					NewInfoExtractWorker ce = this.targetSiteManager.createExtractor(ts);
 					if(ce != null)
-						this.lstTargetSite.add(ce);
+						this.lstTargetSite.add(0, ce);
 				}
 			}
 		}
+	}
+	
+	public void removeSite(int id){
+		log.info("Remove site ID :" + id);
+		
+		NewInfoExtractWorker rWorker = null;
+		for(NewInfoExtractWorker worker : this.lstTargetSite){
+			if(worker.getTargetSite().getSiteId() == id){
+				rWorker = worker;
+				break;
+			}
+		}
+		this.lstTargetSite.remove(rWorker);
+		
+		this.targetSiteManager.removeSite(id);
+		log.info("Removed successfully, SiteID :" + id);
 	}
 	
 	private boolean isLoaded(TargetSite ts){
@@ -94,6 +120,10 @@ public class SmartRssService extends Observable implements Runnable, Observer {
 		}
 	}
 	
+	public String getLatestRssData(int siteID){
+		return this.rssCache.getData(siteID);
+	}
+	
 	// TODO PageTemplate 추출루틴 구현 - 사이트별로 가능하도록 변형
 	public int refreshInfos(){
 		log.debug("Refresh SITE info ..");
@@ -126,15 +156,21 @@ public class SmartRssService extends Observable implements Runnable, Observer {
 			if(niew.getTargetSite().getSiteId() == siteId) {
 				log.info("Refresh RSS Information :" + niew.getTargetSite().getName());
 				
-				String strFileName = "rss/SiteRSS" + niew.getTargetSite().getSiteId() 
-							+ "_" + Calendar.getInstance().getTimeInMillis() +".xml";
+//				String strFileName = "rss/SiteRSS" + niew.getTargetSite().getSiteId() 
+//							+ "_" + Calendar.getInstance().getTimeInMillis() +".xml";
+				String strFileName = "rss/SiteRSS" + niew.getTargetSite().getSiteId() + ".xml";
+				
 				try {
 					List<NewInfo> newInfos = niew.getNewInfo();
 					//TODO need to cache
 					System.out.println("========> EXTed New Info Count : " + newInfos.size());
 					
+					new File(strFileName).delete();
+					//TODO data Ext - 
 					new RssXmlBuilder(niew.getTargetSite(), newInfos, new File(strFileName)).build();
 					
+					log.debug("Rss file generation completed, Update RSS Cache :" + siteId);
+					this.rssCache.loadCurrentFile(siteId);
 					res = newInfos.size();
 				} catch (CommonException e) {
 					log.debug("" + e.getMessage());

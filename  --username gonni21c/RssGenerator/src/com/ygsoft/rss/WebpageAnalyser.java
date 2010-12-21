@@ -38,7 +38,7 @@ public class WebpageAnalyser {
 	
 	public WebpageAnalyser(NewInfo newInfo){
 		this.newInfo = newInfo;
-		this.contFilter = new DefaultContentsFilter();
+		//this.contFilter = new DefaultContentsFilter();
 	}
 	
 	public void setContFilter(IHtmlContentsFilter filter){
@@ -56,7 +56,12 @@ public class WebpageAnalyser {
 		}
 		
 		HtmlDomBuilder domBuilder = new HtmlDomBuilder(bufPs);
-		List<Node> rootNode = domBuilder.build();
+		List<Node> rootNode = null;
+		try {
+			rootNode = domBuilder.build();
+		} catch (me.yglib.htmlparser.CommonException e) {
+			throw new CommonException("Cannot Build Dom Tree, " + e.getMessage());
+		}
 		
 		for(Node node : rootNode){
 			if(node.getToken() instanceof TokenTag){
@@ -71,6 +76,8 @@ public class WebpageAnalyser {
 	
 	//TODO need to change for TEST
 	public void analyse() throws CommonException {
+		this.contFilter = new DefaultContentsFilter(this.newInfo.getLink());
+		
 		this.log.debug("load data :" + this.newInfo.getLink());
 		this.loadData();
 		
@@ -85,7 +92,10 @@ public class WebpageAnalyser {
 	}
 	
 	public String getTitle(){
-		return this.rootNode.getElementValue("title");
+		if(this.rootNode != null)
+			return this.rootNode.getElementValue("title");
+		else
+			return "N/A";
 	}
 	
 	public String getContents(){

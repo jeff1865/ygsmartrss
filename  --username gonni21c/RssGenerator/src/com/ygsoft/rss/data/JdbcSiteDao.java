@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.ygsoft.rss.TargetSiteManager;
+
 
 public class JdbcSiteDao implements ISiteDao {
 
@@ -175,6 +177,30 @@ public class JdbcSiteDao implements ISiteDao {
 		
 	}
 	
+	@Override
+	public void removeMonitorSite(final int siteId) {
+		this.lowDataAccess.excuteSqlActions(new AbstractChainDbAction<Object>(){
+
+			@Override
+			public void action(SqlSession session) {
+				int deleteResult = session.delete("com.ygsoft.rss.data.SiteRssMapper.removeSite", siteId);
+				System.out.println("DELETE RESULT --->" + deleteResult);
+				if(deleteResult > 0)
+				{
+					Map<String, Object> parameters = new HashMap<String, Object>();
+					parameters.put("tableName", TargetSiteManager.siteNameTable + siteId);
+					session.update("com.ygsoft.rss.data.SiteRssMapper.dropDataTable", parameters);
+				}
+			}
+
+			@Override
+			public Object getResult() {
+				return null;	// void function : no return value
+			}
+			
+		});
+	}
+	
 	public static void main(String ... v){
 		LowDataAccess lda = new LowDataAccess(BindHelper.getSqlSessionFactory());
 		JdbcSiteDao jsd = new JdbcSiteDao(lda);
@@ -186,7 +212,9 @@ public class JdbcSiteDao implements ISiteDao {
 //		ts.setTargetUrl("http://www66789.naver.com/");
 //		ts.setCheckStatus(10);
 //		jsd.addMonitorSite(ts);
-		jsd.updateSiteStatus(67, 9);
+//		jsd.updateSiteStatus(67, 9);
+		
+		jsd.removeMonitorSite(69);
 		
 		List<TargetSite> regsiteList = jsd.getRegsiteList();
 		for(TargetSite tsx : regsiteList){
@@ -214,6 +242,8 @@ public class JdbcSiteDao implements ISiteDao {
 //		//dbActionList.add(jsd.createSiteDataTable("test_abc9"));
 //		lda.excuteSqlActions(dbActionList);
 	}
+
+	
 
 	
 }

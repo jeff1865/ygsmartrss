@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.yglib.htmlparser.CommonException;
 import me.yglib.htmlparser.datasource.PageSource;
 import me.yglib.htmlparser.datasource.impl.IntResManager;
 import me.yglib.htmlparser.ex.filter.BasicFilter;
@@ -98,9 +99,21 @@ public class TemplateExtractFilter {
 		} 
 		
 		HtmlDomBuilder domBuilder = new HtmlDomBuilder(bufPs);
-		List<Node> mainNodes = domBuilder.build();
+		List<Node> mainNodes = null;
+		try {
+			mainNodes = domBuilder.build();
+		} catch (CommonException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
-		List<Node> subNodes = new HtmlDomBuilder(bufPs2).build();
+		List<Node> subNodes = null;
+		try {
+			subNodes = new HtmlDomBuilder(bufPs2).build();
+		} catch (CommonException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ArrayList<Node> sNodes = new ArrayList<Node>();
 		sNodes.add(subNodes.get(0));
 		

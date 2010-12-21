@@ -3,8 +3,9 @@ package com.ygsoft.rss.data;
 public enum ESiteStatus {
 	Registered,
 	ReadyToService,
-	WaitToCheck,
+	Active,
 	InChecking,
+	//----------------
 	StoppedByAdmin,
 	ValidDateExpired,
 	InternalError,

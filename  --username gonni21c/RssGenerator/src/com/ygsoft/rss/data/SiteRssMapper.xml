@@ -13,8 +13,16 @@
 			latest_date as "latestDate", 
 			reg_user as "regUser",
 			check_status as "checkStatus"
-		from regsites	
+		from regsites order by reg_date desc;	
 	</select>
+	
+	<delete id="removeSite" parameterType="int">
+		delete from regsites where site_id = #{siteId}
+	</delete>
+	
+	<update id="dropDataTable" parameterType="string">
+		drop table if exists ${tableName}
+	</update>
 	
 	<select id="getRegSite" parameterType="int" resultType="TargetSite">
 		select 

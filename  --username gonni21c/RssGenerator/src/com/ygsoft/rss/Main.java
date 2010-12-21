@@ -34,6 +34,9 @@ public class Main {
 		srSvc.loadAll(true);
 		srSvc.refreshInfo(66);	// CLIEN ID : 66
 		
+		System.out.println("==================[ Result ]====================");
+		System.out.println(srSvc.getLatestRssData(66));
+		
 //		// New Info Extract Module
 //		NewInfoExtractWorker niExt = null;
 //		

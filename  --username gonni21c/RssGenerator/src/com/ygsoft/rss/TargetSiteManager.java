@@ -11,7 +11,7 @@ import com.ygsoft.rss.data.TargetSite;
 public class TargetSiteManager extends Observable {
 	
 	private ISiteDao siteDao = null;
-	private static String siteNameTable = "site_data_";
+	public static String siteNameTable = "site_data_";
 	
 	public TargetSiteManager(ISiteDao siteDao){
 		this.siteDao = siteDao;
@@ -72,6 +72,13 @@ public class TargetSiteManager extends Observable {
 	
 	public List<TargetSite> getTargetSiteList(){
 		return this.siteDao.getRegsiteList();
+	}
+	
+	public void removeSite(int id){
+		this.siteDao.removeMonitorSite(id);
+		
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public static void main(String ... v){

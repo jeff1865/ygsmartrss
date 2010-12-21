@@ -1,7 +1,7 @@
-<table width="100%" border="1">
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
 	<tr><td bgcolor="lightgrey">
 	<table align="left" class="ME" cellpadding="0" cellspacing="0" height="22">
-	<tr style="font-weight:bold;">
+	<tr style="font-weight:bold;" height="40">
 		<td width="120" align="center" bgcolor="grey"><a href="main.gdp">Main</a></td>
 		<td width="120" align="center"><a href="issue.gdp">실시간 이슈</a></td>
 		<td width="120" align="center"><a href="guestbook.gdp">GuestBook</a></td>
@@ -12,7 +12,9 @@
 	<tr>
 		<td bgcolor="#f0f0f0">
 			<br>
-			<table width="95%" border="1" align="center">
+			<center><font size="2">** TEST UI ** </font></center>
+			<div class="board_main">
+			<table width="95%" border="0" align="center" bgcolor="white" class="purpleBorder">
 				<tr>
 					<td align="right" bgcolor="white" colspan="8">
 					<br>
@@ -28,18 +30,19 @@
 					</td>
 				</tr>
 				<tr bgcolor="white" valign="middle"  class="subj2">
-					<td align="center">ID</td>
-					<td align="center">Site</td>
-					<td align="center">Updated</td>
-					<td align="center">검사주기</td>
-					<td align="center">상태</td>
-					<td align="center">구독</td>
-					<td align="center">RSS</td>
-					<td align="center">Mobile</td>
+					<th align="center">ID</th>
+					<th align="center">Site</th>
+					<th align="center">Updated</th>
+					<th align="center">검사주기</th>
+					<th align="center">상태</th>
+					<th align="center">구독</th>
+					<th align="center">RSS</th>
+					<th align="center">Mobile</th>
 				</tr>
 				${siteList}
 			</table>
-			<br>
+			</div>
+			<br><br>
 		</td>
 	</tr>
 </table>

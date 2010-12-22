@@ -79,7 +79,10 @@ public class GdpMain extends Gdplet {
 						"<td>" +
 						"<a href=\"rss.gdp?"+GdpRssReader.paramNameSiteId + "=" + ts.getSiteId()
 						+"\"><img src=\"img/rss.gif\" /></a></td>" +
-						"<td>N/A</td>" +
+						"<td>" +
+						"<a href=\"http://reader.mac.com/mobile/v1/" +
+						"http://gonni.iptime.org:2012/rss.gdp?siteId=" + ts.getSiteId() + "\">" +
+						"<img src=\"img/iphoneRss.jpg\" /></a></td>" +
 						"</tr>" +
 						"<tr class=\"subj2\">" +
 						"<td bgcolor=\"white\">URL</td><td align=\"left\" colspan=\"7\">" + ts.getTargetUrl() +

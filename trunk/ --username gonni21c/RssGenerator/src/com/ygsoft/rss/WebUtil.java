@@ -6,10 +6,22 @@ import java.util.ArrayList;
 public class WebUtil {
 
 	public String convertAbsAddr(String rootAddress, String relativeAddr) {
+		System.out.println("\n---Convert--->" + rootAddress + "\nR:" + relativeAddr);
+		if(relativeAddr.startsWith("http://")) return relativeAddr;
+				
 		String retStr = "http://";
-		String rawType = rootAddress.substring("http://".length(),
-				rootAddress.lastIndexOf("/"));
 		
+		String rawType = null;//rootAddress.substring("http://".length(), rootAddress.lastIndexOf("/"));
+		if(rootAddress.lastIndexOf("/") > 8){
+			rawType = rootAddress.substring("http://".length(), rootAddress.lastIndexOf("/"));
+		} else {
+			rawType = rootAddress.substring("http://".length());
+		}
+		
+		if(!relativeAddr.contains("/")){
+			return retStr + rawType + "/" + relativeAddr;
+		}
+				
 		String[] baseDir = rawType.split("/");
 		
 		int count = 0;

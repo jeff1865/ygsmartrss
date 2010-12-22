@@ -68,22 +68,27 @@ public class NewInfoExtractWorker extends Observable {
 		this.status = EWorkerStatus.Checking;
 		
 		List<NewInfo> arrList = new ArrayList<NewInfo>();
-		
-		AnchorFilter test = new AnchorFilter(this.targetSite.getTargetUrl());
-		List<Anchor> anchorTexts = test.getAnchorTexts();
-		this.printObjectList(anchorTexts);
-		
-		List<NewInfo> lstNewInfo = this.convertNewInfoList(anchorTexts);
-		log.debug("Total extracted Info count : " + lstNewInfo.size());
-
-		arrList = this.siteDao.checkUrls(lstNewInfo);
-		this.convertAbsLink(arrList);
-		
-		log.debug("Total new Information count :" + arrList.size());
-		arrList = this.filterDuplication(arrList);
-		
-		this.status = EWorkerStatus.Active;
-		this.latestNewInfos = arrList;
+		try
+		{
+			AnchorFilter test = new AnchorFilter(this.targetSite.getTargetUrl());
+			List<Anchor> anchorTexts = test.getAnchorTexts();
+			this.printObjectList(anchorTexts);
+			
+			List<NewInfo> lstNewInfo = this.convertNewInfoList(anchorTexts);
+			log.debug("Total extracted Info count : " + lstNewInfo.size());
+	
+			arrList = this.siteDao.checkUrls(lstNewInfo);
+			this.convertAbsLink(arrList);
+			
+			log.debug("Total new Information count :" + arrList.size());
+			arrList = this.filterDuplication(arrList);
+			
+			this.status = EWorkerStatus.Active;
+			this.latestNewInfos = arrList;
+		} catch(Exception e) {
+			e.printStackTrace();
+			this.status = EWorkerStatus.Error;
+		}
 		return arrList;
 	}
 	

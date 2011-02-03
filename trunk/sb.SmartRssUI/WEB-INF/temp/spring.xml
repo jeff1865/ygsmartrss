@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:osgi="http://www.springframework.org/schema/osgi"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+	
+	<osgi:reference id="smartRssService" interface="com.ygsoft.rss.ISmartRssService" />
+		
+	<bean id="serviceController" class="com.ygsoft.smartrss.ui.ServiceController">
+		<property name="ISmartRssService" ref="smartRssService" />
+	</bean>
+		
+	<!-- 
+    <bean id="helloSpringDM" class="com.smartrss.test.HelloSpringDM" init-method="start" destroy-method="stop" />
+    <osgi:service id="hello" ref="helloSpringDM" interface="com.smartrss.test.HelloSpringDM" />
+	
+	<osgi:reference id="tempSvc" interface="chapter11.ITempService"/>
+	<bean id="helloGetter" class="com.smartrss.test.HelloGetter" init-method="start">
+		<property name="ITempService" ref="tempSvc" />
+	</bean>
+	-->
+</beans>

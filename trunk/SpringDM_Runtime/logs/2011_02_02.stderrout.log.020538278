@@ -1,0 +1,18 @@
+2011. 2. 2 오전 10:47:39 com.smartrss.test.MainController mainPage
+정보: ============> Main Controller Activated ..
+2011-02-02 11:05:20.01::INFO:  Shutdown hook executing
+2011-02-02 11:05:20.01::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-02 11:05:20.02::WARN:  EXCEPTION 
+2011-02-02 11:05:20.02::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@c0fe89a{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM3434907497278588654.osgi/}
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.ServerSocketChannelImpl.accept(Unknown Source)
+	at org.mortbay.jetty.nio.SelectChannelConnector$1.acceptChannel(SelectChannelConnector.java:75)
+	at org.mortbay.io.nio.SelectorManager$SelectSet.doSelect(SelectorManager.java:475)
+	at org.mortbay.io.nio.SelectorManager.doSelect(SelectorManager.java:166)
+	at org.mortbay.jetty.nio.SelectChannelConnector.accept(SelectChannelConnector.java:124)
+	at org.mortbay.jetty.AbstractConnector$Acceptor.run(AbstractConnector.java:537)
+	at org.mortbay.thread.BoundedThreadPool$PoolThread.run(BoundedThreadPool.java:450)
+2011-02-02 11:05:20.02::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@7ff0a34{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM2436569596887882224.osgi/}
+2011-02-02 11:05:21.05:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-02 11:05:21.09:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-02 11:05:21.130::INFO:  Shutdown hook complete

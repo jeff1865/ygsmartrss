@@ -1,0 +1,15 @@
+2011-02-01 23:58:20.350::INFO:  jetty-6.1.x
+2011-02-01 23:58:20.361::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-01 23:58:20.379::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-01 23:58:20.379:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-01 23:58:20.379:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello SpringDM
+2011-02-01 23:58:25.880:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-01 23:58:25.307:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-02 00:01:53.104::INFO:  Shutdown hook executing
+2011-02-02 00:01:53.104::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-02 00:01:53.104::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@3e81018b{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM2482624810255034220.osgi/}
+2011-02-02 00:01:53.105::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@1436ae83{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM1754077899665630828.osgi/}
+2011-02-02 00:01:54.011:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-02 00:01:54.015:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-02 00:01:54.126::INFO:  Shutdown hook complete

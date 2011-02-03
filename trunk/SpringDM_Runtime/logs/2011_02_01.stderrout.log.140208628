@@ -1,0 +1,11 @@
+2011-02-01 22:26:59.653::INFO:  jetty-6.1.x
+2011-02-01 22:26:59.665::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-01 22:26:59.682::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-01 22:26:59.682:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-01 22:26:59.683:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello SpringDM
+2011-02-01 22:35:46.770::INFO:  Shutdown hook executing
+2011-02-01 22:35:46.770::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-01 22:35:46.770::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@7dbd9d76{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM5741626691183310651.osgi/}
+2011-02-01 22:35:46.770::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@2bacee78{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM158853517448727450.osgi/}
+2011-02-01 22:35:48.888::INFO:  Shutdown hook complete

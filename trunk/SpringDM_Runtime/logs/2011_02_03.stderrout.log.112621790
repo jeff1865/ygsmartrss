@@ -1,0 +1,79 @@
+2011-02-03 20:17:57.222::INFO:  jetty-6.1.x
+2011-02-03 20:17:57.234::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_03.request.log
+2011-02-03 20:17:57.247::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:17:57.247:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-03 20:17:57.247:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello World!!
+Smart Rss Service Activate !!
+Active Rss Service ..
+Hello SpringDM
+==================[ Site List ]====================
+----------------------------
+SiteID :75
+TargetUrl :http://www.naver.com
+CheckIntervalMin :30
+Name :네이버 메인
+RegDate :2010-12-22 10:45:03.0
+LatestDate :2010-12-22 10:45:03.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :74
+TargetUrl :http://gall.dcinside.com/list.php?id=stock
+CheckIntervalMin :30
+Name :[디씨인사이드] 주식갤러리
+RegDate :2010-12-22 00:48:59.0
+LatestDate :2010-12-22 00:48:59.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :73
+TargetUrl :http://www.bobaedream.co.kr/board/bulletin/list.php?code=battle
+CheckIntervalMin :30
+Name :[보배드림] 시승기
+RegDate :2010-12-22 00:17:37.0
+LatestDate :2010-12-22 00:17:37.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :66
+TargetUrl :http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park
+CheckIntervalMin :100
+Name :[클리앙] 모두의공원
+RegDate :2010-12-03 13:09:44.0
+LatestDate :2010-12-03 13:09:44.0
+RegUser :Admin_YG
+Status : 3
+----------------------------
+SiteID :65
+TargetUrl :http://www.donga.com
+CheckIntervalMin :100
+Name :동아일보
+RegDate :2010-12-02 15:12:46.0
+LatestDate :2010-12-02 15:12:46.0
+RegUser :Admin_YG
+Status : 4
+----------------------------
+SiteID :64
+TargetUrl :http://www.nate.com
+CheckIntervalMin :100
+Name :Nate 메인
+RegDate :2010-12-02 15:09:47.0
+LatestDate :2010-12-02 15:09:47.0
+RegUser :Admin_YG
+Status : 4
+==================[ Get New Info ]====================
+2011-02-03 20:18:01.174:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:18:02.710:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:18:02.232:/SmartRSS:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:18:02.264:/SmartRSS:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:26:13.268::INFO:  Shutdown hook executing
+2011-02-03 20:26:13.268::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:26:13.269::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@1769c398{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM1716842187311219975.osgi/}
+2011-02-03 20:26:13.269::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@505fa26{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM3171567533758600537.osgi/}
+2011-02-03 20:26:13.269::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@11ba4159{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS6772655628538745554.osgi/}
+2011-02-03 20:26:14.271:/SmartRSS:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:26:14.274:/SmartRSS:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:26:14.293:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:26:14.294:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:26:14.405::INFO:  Shutdown hook complete

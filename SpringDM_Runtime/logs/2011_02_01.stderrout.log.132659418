@@ -1,0 +1,6 @@
+2011-02-01 22:26:26.688::INFO:  jetty-6.1.x
+2011-02-01 22:26:26.700::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-01 22:26:26.721::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-01 22:26:26.721:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-01 22:26:26.722:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello SpringDM

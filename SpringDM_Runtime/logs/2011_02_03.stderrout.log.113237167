@@ -1,0 +1,456 @@
+2011-02-03 20:31:19.675::INFO:  jetty-6.1.x
+2011-02-03 20:31:19.686::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_03.request.log
+2011-02-03 20:31:19.699::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:31:19.699:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-03 20:31:19.699:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello World!!
+Smart Rss Service Activate !!
+Active Rss Service ..
+Hello SpringDM
+==================[ Site List ]====================
+----------------------------
+SiteID :75
+TargetUrl :http://www.naver.com
+CheckIntervalMin :30
+Name :네이버 메인
+RegDate :2010-12-22 10:45:03.0
+LatestDate :2010-12-22 10:45:03.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :74
+TargetUrl :http://gall.dcinside.com/list.php?id=stock
+CheckIntervalMin :30
+Name :[디씨인사이드] 주식갤러리
+RegDate :2010-12-22 00:48:59.0
+LatestDate :2010-12-22 00:48:59.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :73
+TargetUrl :http://www.bobaedream.co.kr/board/bulletin/list.php?code=battle
+CheckIntervalMin :30
+Name :[보배드림] 시승기
+RegDate :2010-12-22 00:17:37.0
+LatestDate :2010-12-22 00:17:37.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :66
+TargetUrl :http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park
+CheckIntervalMin :100
+Name :[클리앙] 모두의공원
+RegDate :2010-12-03 13:09:44.0
+LatestDate :2010-12-03 13:09:44.0
+RegUser :Admin_YG
+Status : 3
+----------------------------
+SiteID :65
+TargetUrl :http://www.donga.com
+CheckIntervalMin :100
+Name :동아일보
+RegDate :2010-12-02 15:12:46.0
+LatestDate :2010-12-02 15:12:46.0
+RegUser :Admin_YG
+Status : 4
+----------------------------
+SiteID :64
+TargetUrl :http://www.nate.com
+CheckIntervalMin :100
+Name :Nate 메인
+RegDate :2010-12-02 15:09:47.0
+LatestDate :2010-12-02 15:09:47.0
+RegUser :Admin_YG
+Status : 4
+==================[ Get New Info ]====================
+2011-02-03 20:31:24.954:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:31:24.394:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:31:25.977:/SmartRSS:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:31:25.011:/SmartRSS:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:31:25.361::WARN:  failed dispatcher
+javax.servlet.ServletException: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:437)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	... 16 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	... 31 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	... 51 more
+2011-02-03 20:31:25.363::WARN:  Nested in javax.servlet.ServletException: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	... 31 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	... 51 more
+2011-02-03 20:31:25.364::WARN:  Nested in org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?:
+org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 20:31:25.365::WARN:  Failed startup of context org.mortbay.jetty.webapp.WebAppContext@4810f0a0{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS8325647622235267507.osgi/}
+javax.servlet.ServletException: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:437)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	... 16 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	... 31 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	... 51 more
+2011-02-03 20:31:25.367::WARN:  Nested in javax.servlet.ServletException: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	... 31 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	... 51 more
+2011-02-03 20:31:25.368::WARN:  Nested in org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?:
+org.springframework.beans.NotWritablePropertyException: Invalid property 'ITempService' of bean class [com.ygsoft.smartrss.ui.MainController]: Bean property 'ITempService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:877)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:722)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:60)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1061)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1004)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:371)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:350)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:82)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 20:32:25.057::INFO:  Shutdown hook executing
+2011-02-03 20:32:25.057::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:32:25.058::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@58f41393{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM7849080099907829481.osgi/}
+2011-02-03 20:32:25.058::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@56b18494{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM5085681836346752687.osgi/}
+2011-02-03 20:32:25.058::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@4810f0a0{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS8325647622235267507.osgi/}
+2011-02-03 20:32:26.061:/SmartRSS:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:32:26.070:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:32:26.072:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:32:26.181::INFO:  Shutdown hook complete

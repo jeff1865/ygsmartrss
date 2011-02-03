@@ -1,0 +1,280 @@
+2011-02-03 20:16:23.239::INFO:  jetty-6.1.x
+2011-02-03 20:16:23.251::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_03.request.log
+2011-02-03 20:16:23.264::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:16:23.264:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-03 20:16:23.265:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello World!!
+Smart Rss Service Activate !!
+Active Rss Service ..
+Hello SpringDM
+==================[ Site List ]====================
+----------------------------
+SiteID :75
+TargetUrl :http://www.naver.com
+CheckIntervalMin :30
+Name :네이버 메인
+RegDate :2010-12-22 10:45:03.0
+LatestDate :2010-12-22 10:45:03.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :74
+TargetUrl :http://gall.dcinside.com/list.php?id=stock
+CheckIntervalMin :30
+Name :[디씨인사이드] 주식갤러리
+RegDate :2010-12-22 00:48:59.0
+LatestDate :2010-12-22 00:48:59.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :73
+TargetUrl :http://www.bobaedream.co.kr/board/bulletin/list.php?code=battle
+CheckIntervalMin :30
+Name :[보배드림] 시승기
+RegDate :2010-12-22 00:17:37.0
+LatestDate :2010-12-22 00:17:37.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :66
+TargetUrl :http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park
+CheckIntervalMin :100
+Name :[클리앙] 모두의공원
+RegDate :2010-12-03 13:09:44.0
+LatestDate :2010-12-03 13:09:44.0
+RegUser :Admin_YG
+Status : 3
+----------------------------
+SiteID :65
+TargetUrl :http://www.donga.com
+CheckIntervalMin :100
+Name :동아일보
+RegDate :2010-12-02 15:12:46.0
+LatestDate :2010-12-02 15:12:46.0
+RegUser :Admin_YG
+Status : 4
+----------------------------
+SiteID :64
+TargetUrl :http://www.nate.com
+CheckIntervalMin :100
+Name :Nate 메인
+RegDate :2010-12-02 15:09:47.0
+LatestDate :2010-12-02 15:09:47.0
+RegUser :Admin_YG
+Status : 4
+==================[ Get New Info ]====================
+2011-02-03 20:16:27.032:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:16:27.557:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:16:28.064:/SmartRSS:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:16:28.095:/SmartRSS:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:16:28.601::WARN:  failed dispatcher
+javax.servlet.ServletException: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:437)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:68)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:80)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.error(BeanDefinitionParserDelegate.java:284)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1324)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1317)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:134)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:91)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:475)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:372)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	... 16 more
+2011-02-03 20:16:28.603::WARN:  Nested in javax.servlet.ServletException: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+:
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:68)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:80)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.error(BeanDefinitionParserDelegate.java:284)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1324)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1317)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:134)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:91)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:475)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:372)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 20:16:28.606::WARN:  Failed startup of context org.mortbay.jetty.webapp.WebAppContext@7168afdd{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS1998324634550414142.osgi/}
+javax.servlet.ServletException: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:437)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:68)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:80)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.error(BeanDefinitionParserDelegate.java:284)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1324)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1317)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:134)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:91)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:475)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:372)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	... 16 more
+2011-02-03 20:16:28.608::WARN:  Nested in javax.servlet.ServletException: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+:
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Unable to locate Spring NamespaceHandler for XML schema namespace [http://www.springframework.org/schema/osgi]
+Offending resource: ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:68)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:80)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.error(BeanDefinitionParserDelegate.java:284)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1324)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1317)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:134)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:91)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:475)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:372)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:316)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:443)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:340)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:307)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:127)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:433)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:256)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:612)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:139)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 20:17:47.339::INFO:  Shutdown hook executing
+2011-02-03 20:17:47.339::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:17:47.339::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@14ee3dee{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM856838089108678126.osgi/}
+2011-02-03 20:17:47.340::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@560508be{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM5706712910586283623.osgi/}
+2011-02-03 20:17:47.340::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@7168afdd{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS1998324634550414142.osgi/}
+2011-02-03 20:17:48.342:/SmartRSS:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:17:48.350:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:17:48.352:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:17:48.461::INFO:  Shutdown hook complete

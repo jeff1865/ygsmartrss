@@ -1,0 +1,86 @@
+2011-02-02 00:15:29.785::INFO:  jetty-6.1.x
+2011-02-02 00:15:29.797::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-02 00:15:29.810::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-02 00:15:29.810:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-02 00:15:29.811:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello SpringDM
+2011-02-02 00:15:33.478:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-02 00:15:34.996::WARN:  Failed startup of context org.mortbay.jetty.webapp.WebAppContext@2c1533c8{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM5100452964342232699.osgi/}
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.springframework.web.handler.BeanNameUrlHandlerMapping] for bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: org.springframework.web.handler.BeanNameUrlHandlerMapping
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1217)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:842)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:525)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.handler.BeanNameUrlHandlerMapping
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.net.FactoryURLClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1239)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1209)
+	... 23 more
+2011-02-02 00:15:34.996::WARN:  Nested in org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.springframework.web.handler.BeanNameUrlHandlerMapping] for bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: org.springframework.web.handler.BeanNameUrlHandlerMapping:
+java.lang.ClassNotFoundException: org.springframework.web.handler.BeanNameUrlHandlerMapping
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.net.FactoryURLClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1239)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1209)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:842)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:525)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-02 00:16:04.043::INFO:  Shutdown hook executing
+2011-02-02 00:16:04.043::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-02 00:16:04.044::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@207e5619{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM7458276687337983899.osgi/}
+2011-02-02 00:16:04.044::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@2c1533c8{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM5100452964342232699.osgi/}
+2011-02-02 00:16:05.045:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-02 00:16:05.057::INFO:  Shutdown hook complete

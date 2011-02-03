@@ -1,0 +1,50 @@
+2011-02-01 23:02:08.423::INFO:  jetty-6.1.x
+2011-02-01 23:02:08.435::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-01 23:02:08.453::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-01 23:02:08.453:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-01 23:02:08.453:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+!SESSION 2011-02-01 23:02:07.911 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_22
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -dev file:D:/03. Dev Data/Eclipse Project/SmartRssOnSpringDM3.0/.metadata/.plugins/org.eclipse.pde.core/WebSpringDM/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY TestSpringWebBundle 4 0 2011-02-01 23:02:08.831
+!MESSAGE 
+!STACK 0
+org.osgi.framework.BundleException: The bundle "TestSpringWebBundle_1.0.0.qualifier [38]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.springframework.web.servlet; bundle-version="3.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1317)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1301)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:319)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+
+!ENTRY org.eclipse.osgi 4 0 2011-02-01 23:02:08.840
+!MESSAGE Bundle initial@reference:file:../../TestSpringWebBundle/ was not resolved.
+
+!ENTRY org.eclipse.osgi 2 0 2011-02-01 23:02:08.902
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2011-02-01 23:02:08.902
+!MESSAGE Bundle initial@reference:file:../../TestSpringWebBundle/ was not resolved.
+!SUBENTRY 2 TestSpringWebBundle 2 0 2011-02-01 23:02:08.902
+!MESSAGE Missing required bundle org.springframework.web.servlet_3.0.0.
+
+!ENTRY org.eclipse.osgi 2 0 2011-02-01 23:02:08.903
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2011-02-01 23:02:08.904
+!MESSAGE Bundle TestSpringWebBundle_1.0.0.qualifier [38] was not resolved.
+!SUBENTRY 2 TestSpringWebBundle 2 0 2011-02-01 23:02:08.904
+!MESSAGE Missing required bundle org.springframework.web.servlet_3.0.0.
+Hello SpringDM
+2011-02-01 23:03:52.903::INFO:  Shutdown hook executing
+2011-02-01 23:03:52.903::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-01 23:03:52.903::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@4679ac92{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM4710888606835672354.osgi/}
+2011-02-01 23:03:53.909::INFO:  Shutdown hook complete

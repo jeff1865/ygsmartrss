@@ -1,0 +1,246 @@
+2011-02-03 17:47:18.583::INFO:  jetty-6.1.x
+2011-02-03 17:47:18.598::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_03.request.log
+2011-02-03 17:47:18.641::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-03 17:47:18.641:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-03 17:47:18.641:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello World!!
+Smart Rss Service Activate !!
+Active Rss Service ..
+Hello SpringDM
+==================[ Site List ]====================
+----------------------------
+SiteID :75
+TargetUrl :http://www.naver.com
+CheckIntervalMin :30
+Name :네이버 메인
+RegDate :2010-12-22 10:45:03.0
+LatestDate :2010-12-22 10:45:03.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :74
+TargetUrl :http://gall.dcinside.com/list.php?id=stock
+CheckIntervalMin :30
+Name :[디씨인사이드] 주식갤러리
+RegDate :2010-12-22 00:48:59.0
+LatestDate :2010-12-22 00:48:59.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :73
+TargetUrl :http://www.bobaedream.co.kr/board/bulletin/list.php?code=battle
+CheckIntervalMin :30
+Name :[보배드림] 시승기
+RegDate :2010-12-22 00:17:37.0
+LatestDate :2010-12-22 00:17:37.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :66
+TargetUrl :http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park
+CheckIntervalMin :100
+Name :[클리앙] 모두의공원
+RegDate :2010-12-03 13:09:44.0
+LatestDate :2010-12-03 13:09:44.0
+RegUser :Admin_YG
+Status : 3
+----------------------------
+SiteID :65
+TargetUrl :http://www.donga.com
+CheckIntervalMin :100
+Name :동아일보
+RegDate :2010-12-02 15:12:46.0
+LatestDate :2010-12-02 15:12:46.0
+RegUser :Admin_YG
+Status : 4
+----------------------------
+SiteID :64
+TargetUrl :http://www.nate.com
+CheckIntervalMin :100
+Name :Nate 메인
+RegDate :2010-12-02 15:09:47.0
+LatestDate :2010-12-02 15:09:47.0
+RegUser :Admin_YG
+Status : 4
+==================[ Get New Info ]====================
+2011-02-03 17:47:22.939:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 17:47:23.472:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 17:47:23.993:/SmartRSS:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 17:47:23.350::WARN:  Failed startup of context org.mortbay.jetty.webapp.WebAppContext@5ac791f4{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS6736514308323075676.osgi/}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1217)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:285)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:266)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1061)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:75)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	... 25 more
+Caused by: java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.net.FactoryURLClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1239)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1209)
+	... 40 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1217)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:285)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:364)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1075)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:266)
+	at org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.initInterceptors(AbstractUrlHandlerMapping.java:167)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:110)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:57)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.net.FactoryURLClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1239)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1209)
+	... 42 more
+2011-02-03 17:47:23.353::WARN:  Nested in org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerMapping' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.smartrss.test.MainController] for bean with name '/main.xhtm' defined in ServletContext resource [/WEB-INF/dispatcher-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.smartrss.test.MainController:
+java.lang.ClassNotFoundException: com.smartrss.test.MainController
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.net.FactoryURLClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:397)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1239)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1209)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:285)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:266)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1061)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.detectHandlers(AbstractDetectingUrlHandlerMapping.java:75)
+	at org.springframework.web.servlet.handler.AbstractDetectingUrlHandlerMapping.initApplicationContext(AbstractDetectingUrlHandlerMapping.java:58)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:119)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:71)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.doProcess(ApplicationContextAwareProcessor.java:116)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:99)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:394)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:289)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:286)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:543)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:842)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:416)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 17:47:57.547::INFO:  Shutdown hook executing
+2011-02-03 17:47:57.547::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-03 17:47:57.547::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@40930120{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM1678110260101601383.osgi/}
+2011-02-03 17:47:57.547::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@11e3c2c6{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM2491891645704230723.osgi/}
+2011-02-03 17:47:57.547::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@5ac791f4{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS6736514308323075676.osgi/}
+2011-02-03 17:47:58.453:/SmartRSS:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 17:47:58.461:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 17:47:58.464:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 17:47:58.473::INFO:  Shutdown hook complete

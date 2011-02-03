@@ -1,0 +1,121 @@
+2011-02-01 23:45:05.357::INFO:  jetty-6.1.x
+2011-02-01 23:45:05.371::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_01.request.log
+2011-02-01 23:45:05.389::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-01 23:45:05.389:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-01 23:45:05.390:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+
+!ENTRY org.eclipse.osgi 2 0 2011-02-01 23:45:05.987
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2011-02-01 23:45:05.988
+!MESSAGE Bundle initial@reference:file:org.springframework.web.servlet-3.0.0.RELEASE.jar/ was not resolved.
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.988
+!MESSAGE Missing imported package org.springframework.ui.freemarker_[3.0.0,3.0.1).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.988
+!MESSAGE Missing imported package org.springframework.ui.velocity_[3.0.0,3.0.1).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.988
+!MESSAGE Missing imported package org.springframework.ui.jasperreports_[3.0.0,3.0.1).
+
+!ENTRY org.eclipse.osgi 2 0 2011-02-01 23:45:05.997
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2011-02-01 23:45:05.997
+!MESSAGE Bundle TestSpringWebBundle_1.0.0.qualifier [38] was not resolved.
+!SUBENTRY 2 TestSpringWebBundle 2 0 2011-02-01 23:45:05.997
+!MESSAGE Missing required bundle org.springframework.web.servlet_3.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2011-02-01 23:45:05.997
+!MESSAGE Bundle org.springframework.web.servlet_3.0.0.RELEASE [77] was not resolved.
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.998
+!MESSAGE Missing optionally imported package com.lowagie.text_[2.0.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.998
+!MESSAGE Missing optionally imported package com.lowagie.text.pdf_[2.0.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.998
+!MESSAGE Missing optionally imported package com.sun.syndication.feed_[1.0.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.998
+!MESSAGE Missing optionally imported package com.sun.syndication.feed.atom_[1.0.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.999
+!MESSAGE Missing optionally imported package com.sun.syndication.feed.rss_[1.0.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.999
+!MESSAGE Missing optionally imported package com.sun.syndication.io_[1.0.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.999
+!MESSAGE Missing optionally imported package freemarker.cache_[2.3.14,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.999
+!MESSAGE Missing optionally imported package freemarker.core_[2.3.14,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:05.999
+!MESSAGE Missing optionally imported package freemarker.ext.jsp_[2.3.14,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package freemarker.ext.servlet_[2.3.14,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package freemarker.template_[2.3.14,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package jxl_[2.6.6,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package jxl.write_[2.6.6,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package net.sf.jasperreports.engine_[2.0.5,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.000
+!MESSAGE Missing optionally imported package net.sf.jasperreports.engine.design_[2.0.5,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package net.sf.jasperreports.engine.export_[2.0.5,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package net.sf.jasperreports.engine.util_[2.0.5,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package net.sf.jasperreports.engine.xml_[2.0.5,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package org.apache.poi.hssf.usermodel_[3.0.2.FINAL,4.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package org.apache.poi.poifs.filesystem_[3.0.2.FINAL,4.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package org.apache.tiles_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.001
+!MESSAGE Missing optionally imported package org.apache.tiles.context_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.definition_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.evaluator.el_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.evaluator.impl_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.impl_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.jsp.context_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.locale.impl_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.002
+!MESSAGE Missing optionally imported package org.apache.tiles.preparer_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.tiles.servlet.context_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.tiles.servlet.context.wildcard_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.tiles.startup_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.tiles.web.util_[2.1.2,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.velocity_[1.5.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.003
+!MESSAGE Missing optionally imported package org.apache.velocity.app_[1.5.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.context_[1.5.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.exception_[1.5.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.runtime.resource.loader_[1.5.0,2.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.tools.generic_[1.4.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.tools.view_[1.4.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.tools.view.context_[1.4.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.004
+!MESSAGE Missing optionally imported package org.apache.velocity.tools.view.servlet_[1.4.0,3.0.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.005
+!MESSAGE Missing optionally imported package org.codehaus.jackson_[1.0.0,1.1.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.005
+!MESSAGE Missing optionally imported package org.codehaus.jackson.map_[1.0.0,1.1.0).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.005
+!MESSAGE Missing optionally imported package org.springframework.oxm_[3.0.0,3.0.1).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.005
+!MESSAGE Missing imported package org.springframework.ui.freemarker_[3.0.0,3.0.1).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.005
+!MESSAGE Missing imported package org.springframework.ui.jasperreports_[3.0.0,3.0.1).
+!SUBENTRY 2 org.springframework.web.servlet 2 0 2011-02-01 23:45:06.006
+!MESSAGE Missing imported package org.springframework.ui.velocity_[3.0.0,3.0.1).

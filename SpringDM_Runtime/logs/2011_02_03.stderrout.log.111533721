@@ -1,0 +1,154 @@
+2011-02-03 20:13:52.278::INFO:  jetty-6.1.x
+2011-02-03 20:13:52.292::INFO:  Opened D:\03. Dev Data\Eclipse Project\SmartRssOnSpringDM3.0\SpringDM_Runtime\logs\2011_02_03.request.log
+2011-02-03 20:13:52.311::INFO:  Started SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:13:52.311:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Succesfully started Jetty 6.1.x
+2011-02-03 20:13:52.312:org.springframework.osgi.web.jetty.internal.Activator:INFO:  Published Jetty 6.1.x as an OSGi service
+Hello World!!
+Smart Rss Service Activate !!
+Active Rss Service ..
+Hello SpringDM
+==================[ Site List ]====================
+----------------------------
+SiteID :75
+TargetUrl :http://www.naver.com
+CheckIntervalMin :30
+Name :네이버 메인
+RegDate :2010-12-22 10:45:03.0
+LatestDate :2010-12-22 10:45:03.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :74
+TargetUrl :http://gall.dcinside.com/list.php?id=stock
+CheckIntervalMin :30
+Name :[디씨인사이드] 주식갤러리
+RegDate :2010-12-22 00:48:59.0
+LatestDate :2010-12-22 00:48:59.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :73
+TargetUrl :http://www.bobaedream.co.kr/board/bulletin/list.php?code=battle
+CheckIntervalMin :30
+Name :[보배드림] 시승기
+RegDate :2010-12-22 00:17:37.0
+LatestDate :2010-12-22 00:17:37.0
+RegUser :guest
+Status : 0
+----------------------------
+SiteID :66
+TargetUrl :http://clien.career.co.kr/cs2/bbs/board.php?bo_table=park
+CheckIntervalMin :100
+Name :[클리앙] 모두의공원
+RegDate :2010-12-03 13:09:44.0
+LatestDate :2010-12-03 13:09:44.0
+RegUser :Admin_YG
+Status : 3
+----------------------------
+SiteID :65
+TargetUrl :http://www.donga.com
+CheckIntervalMin :100
+Name :동아일보
+RegDate :2010-12-02 15:12:46.0
+LatestDate :2010-12-02 15:12:46.0
+RegUser :Admin_YG
+Status : 4
+----------------------------
+SiteID :64
+TargetUrl :http://www.nate.com
+CheckIntervalMin :100
+Name :Nate 메인
+RegDate :2010-12-02 15:09:47.0
+LatestDate :2010-12-02 15:09:47.0
+RegUser :Admin_YG
+Status : 4
+==================[ Get New Info ]====================
+2011-02-03 20:13:53.104:/HellDM:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:13:55.463:/HellDM:INFO:  Initializing Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:13:55.049:/SmartRSS:INFO:  Initializing Spring root WebApplicationContext
+2011-02-03 20:13:55.053::WARN:  Failed startup of context org.mortbay.jetty.webapp.WebAppContext@73983ad7{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS3235000071123912.osgi/}
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI]; nested exception is java.io.FileNotFoundException: OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI] cannot be resolved to URL because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:323)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.osgi.context.support.OsgiBundleXmlApplicationContext.loadBeanDefinitions(OsgiBundleXmlApplicationContext.java:172)
+	at org.springframework.osgi.context.support.OsgiBundleXmlApplicationContext.loadBeanDefinitions(OsgiBundleXmlApplicationContext.java:142)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.access$301(AbstractDelegatedExecutionApplicationContext.java:62)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$1.run(AbstractDelegatedExecutionApplicationContext.java:170)
+	at org.springframework.osgi.util.internal.PrivilegedUtils.executeWithCustomTCCL(PrivilegedUtils.java:87)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.normalRefresh(AbstractDelegatedExecutionApplicationContext.java:166)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$NoDependenciesWaitRefreshExecutor.refresh(AbstractDelegatedExecutionApplicationContext.java:80)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.refresh(AbstractDelegatedExecutionApplicationContext.java:159)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: java.io.FileNotFoundException: OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI] cannot be resolved to URL because it does not exist
+	at org.springframework.osgi.io.OsgiBundleResource.getURL(OsgiBundleResource.java:232)
+	at org.springframework.osgi.io.OsgiBundleResource.getInputStream(OsgiBundleResource.java:184)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:310)
+	... 32 more
+2011-02-03 20:13:55.053::WARN:  Nested in org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI]; nested exception is java.io.FileNotFoundException: OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI] cannot be resolved to URL because it does not exist:
+java.io.FileNotFoundException: OSGi resource[/WEB-INF/applicationContext.xml|bnd.id=151|bnd.sym=sb.SmartRssUI] cannot be resolved to URL because it does not exist
+	at org.springframework.osgi.io.OsgiBundleResource.getURL(OsgiBundleResource.java:232)
+	at org.springframework.osgi.io.OsgiBundleResource.getInputStream(OsgiBundleResource.java:184)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:310)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.osgi.context.support.OsgiBundleXmlApplicationContext.loadBeanDefinitions(OsgiBundleXmlApplicationContext.java:172)
+	at org.springframework.osgi.context.support.OsgiBundleXmlApplicationContext.loadBeanDefinitions(OsgiBundleXmlApplicationContext.java:142)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:388)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.access$301(AbstractDelegatedExecutionApplicationContext.java:62)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$1.run(AbstractDelegatedExecutionApplicationContext.java:170)
+	at org.springframework.osgi.util.internal.PrivilegedUtils.executeWithCustomTCCL(PrivilegedUtils.java:87)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.normalRefresh(AbstractDelegatedExecutionApplicationContext.java:166)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$NoDependenciesWaitRefreshExecutor.refresh(AbstractDelegatedExecutionApplicationContext.java:80)
+	at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.refresh(AbstractDelegatedExecutionApplicationContext.java:159)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:261)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:192)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startWebAppContext(JettyWarDeployer.java:210)
+	at org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.startDeployment(JettyWarDeployer.java:122)
+	at org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(AbstractWarDeployer.java:93)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun(WarLoaderListener.java:257)
+	at org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run(WarLoaderListener.java:222)
+	at org.springframework.scheduling.timer.DelegatingTimerTask.run(DelegatingTimerTask.java:70)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2011-02-03 20:15:12.754::INFO:  Shutdown hook executing
+2011-02-03 20:15:12.754::INFO:  Graceful shutdown SelectChannelConnector@0.0.0.0:8080
+2011-02-03 20:15:12.755::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@35e80f3a{/HelloSpringDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HelloSpringDM6123259133276004445.osgi/}
+2011-02-03 20:15:12.755::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@163fc47c{/HellDM,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-HellDM3643543377201144310.osgi/}
+2011-02-03 20:15:12.755::INFO:  Graceful shutdown org.mortbay.jetty.webapp.WebAppContext@73983ad7{/SmartRSS,file:/C:/Users/Gonni/AppData/Local/Temp/jetty-SmartRSS3235000071123912.osgi/}
+2011-02-03 20:15:13.756:/SmartRSS:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:15:13.760:/HellDM:INFO:  Destroying Spring FrameworkServlet 'dispatcher'
+2011-02-03 20:15:13.761:/HellDM:INFO:  Closing Spring root WebApplicationContext
+2011-02-03 20:15:13.870::INFO:  Shutdown hook complete

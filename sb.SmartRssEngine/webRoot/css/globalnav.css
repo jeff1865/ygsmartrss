@@ -1,0 +1,127 @@
+#header #logo {
+float:left;
+padding: 15px 0 5px 10px;
+}
+#header #topNav {
+  float: right; 
+  margin-top: 20px;
+  text-align: right;
+  color: #999;
+  height: 33px;
+}
+
+#topNav ul {
+	list-style: none !important;
+	margin: 0;
+	padding: 0;
+}
+
+#topNav li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	background: none;
+}
+
+#topNav ul {margin-right: 5px;}
+#topNav li {font-size: 80%;}
+#topNav span {margin: 0 6px;}
+#topNav span.prov {margin: 0; color: #666;}
+#topNav label {display: none;}
+
+#loginHeader, #logout {
+  background:transparent url(../images/nav/lockIcon.gif) no-repeat scroll right top;
+  display:block;
+  padding:0px 22px 4px 0px;
+}
+
+#quickSearchTerm {
+  height: 12px; 
+  font-size: 90%; 
+  width: 100px; 
+  border: 1px solid #999; 
+  margin-left: 25px;
+  padding: 1px 2px 2px 2px;
+  color: #999;
+}
+
+#butGoSm {
+  width: 16px; 
+  height: 16px; 
+  font-size: 1px; 
+  padding-top: 10px; 
+  color: #6c0 !important; 
+  background: url(../images/nav/go.gif) top left no-repeat; 
+  cursor:pointer; 
+  vertical-align: top;
+  border: 0;
+	padding-bottom: 2px;
+	text-align: center;
+	font-weight: normal;
+}
+
+#header a, #mainNav a { border: none !important;}
+#mainNav {padding: 0; background-color: #F9F8F8; height: 20px; }
+#mainNav ul { position: relative;  margin: 0;  padding: 0; border: none;  }
+#mainNav ul li { height: 20px;  position: absolute;  top: 0px;  width: 135px;  background: none;  display: block;  list-style: none; font-weight: bold; font-size: 95%}
+#mainNav ul a { width: 135px;  display: block; text-align: center;  padding-top: 3px;    color: #6d458a;  text-decoration: none;}
+#mainNav ul strong {display: none;}
+#mainNav ul #mainNavHome {left: 10px;}
+#mainNav ul #mainNavAccounts {left: 112px;}
+#mainNav ul #mainNavTv {left: 220px;}
+#mainNav ul #mainNavInternet {left: 315px;}
+#mainNav ul #mainNavTelephone {left: 435px;}
+#mainNav ul #mainNavBundles {left: 530px;}
+#mainNav ul #mainNavHelp {left: 620px;}
+#mainNav ul a:hover {color: #9273a7;}
+#mainNavInternet {background: url(../images/nav/mainNavBgOn.gif) 10px 0px no-repeat !important;}
+
+/* Start Sub Navigation */
+#subNav {
+  height: 23px; 
+  padding: 0px;
+  color: #fff;
+  font-weight: normal;
+  position: relative;
+  font-size: 90% !important;
+  background: #E7E7E7 url(../images/nav/subNavBG.gif) bottom left repeat-x !important; 
+}
+
+#subNav ul {
+	list-style: none !important;
+	margin: 0px;
+	padding: 0px 10px 0px 5px;
+	background: none;
+}
+
+#subNav li {
+  margin: 0;
+  padding: 5px 0px 4px 3px;
+  display: block;
+  float: left;
+  background: none;
+  color: #926FAA;
+}
+
+
+#subNav li a:link, #subNav li a:visited {
+  color: #49166D;
+  padding: 2px 0px 0px 0px;
+  margin: 0 13px 0 13px;
+  text-decoration: none;
+  height: 1px;
+}
+
+#subNav li a:hover, #subNav li a:active {
+  color: #7744a0 !important;
+}
+
+#hs #subNav .hs a, #whn #subNav .whn a, #dup #subNav .dup a, #sec #subNav .sec a, #mng #subNav .mng a, #promotions #subNav .promotions a {
+  color: #49166D !important;
+  border-bottom: 3px solid #6c0;
+  text-decoration: none !important;
+}
+
+body.internet #subNav li a:hover {
+  text-decoration: none !important;
+}

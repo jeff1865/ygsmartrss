@@ -1,0 +1,29 @@
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>	
+	
+	<typeAliases>
+		<typeAlias type="com.ygsoft.rss.data.NewInfo" alias="NewInfo"/>
+		<typeAlias type="com.ygsoft.rss.data.TargetSite" alias="TargetSite"/>
+	</typeAliases>
+		
+	<environments default="development">
+		<environment id="development">
+		<transactionManager type="JDBC" />
+		<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://localhost/rssdata" />
+			<!--  <property name="useUnicode" value="yes&amp;characterEncoding=EUCKR"/> -->
+			<property name="username" value="root"/>
+			<property name="password" value="1999"/>
+		</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/ygsoft/rss/data/SiteRssMapper.xml"/>
+	</mappers>
+	
+</configuration>

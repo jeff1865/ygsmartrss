@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ygsoft.rss.data.SiteRssMapper">
+	
+	<select id="getRegSiteList" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser",
+			check_status as "checkStatus"
+		from regsites order by reg_date desc;	
+	</select>
+	
+	<delete id="removeSite" parameterType="int">
+		delete from regsites where site_id = #{siteId}
+	</delete>
+	
+	<update id="dropDataTable" parameterType="string">
+		drop table if exists ${tableName}
+	</update>
+	
+	<select id="getRegSite" parameterType="int" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser",
+			check_status as "checkStatus"
+		from regsites 
+		where site_id = #{siteId}
+	</select>
+	
+	<select id="getRegSiteFromUrl" parameterType="string" resultType="TargetSite">
+		select 
+			site_id as "siteId", 
+			target_url as "targetUrl", 
+			check_interval_min as "checkIntervalMin",  
+			name as "name", 
+			reg_date as "regDate", 
+			latest_date as "latestDate", 
+			reg_user as "regUser", 
+			check_status as "checkStatus"
+		from regsites 
+		where target_url = #{url}
+	</select>
+	
+	<update id="updateStatus" parameterType="TargetSite">
+		update regsites set check_status = #{checkStatus} where site_id = #{siteId}
+	</update>
+	
+	<update id="createDataTable" parameterType="string">
+		CREATE TABLE ${tableName} (
+					anc_url VARCHAR(381) NOT NULL,
+					anc_text VARCHAR(256),
+					anc_img VARCHAR(256), 
+					dup_cnt INTEGER UNSIGNED NOT NULL,
+					regDate TIMESTAMP default 0,
+					latestDate TIMESTAMP default current_timestamp on update current_timestamp,
+					PRIMARY KEY (anc_url)
+					);
+	</update>
+	
+	<insert id="checkInfo" parameterType="NewInfo" flushCache="true">
+		insert into site_data_${siteId} (anc_url, anc_text, anc_img, dup_cnt, regDate)
+		values(#{link}, #{anchorText}, #{img}, 0, now())
+		on duplicate key update dup_cnt = dup_cnt + 1;
+	</insert>
+		
+	<insert id="addTargetSite" parameterType="TargetSite">
+		insert into regsites(target_url, check_interval_min, name, reg_date, latest_date, reg_user, check_status)
+		values(#{targetUrl},#{checkIntervalMin}, #{name}, now(), now(), #{regUser}, #{checkStatus});
+	</insert>
+		
+</mapper>
